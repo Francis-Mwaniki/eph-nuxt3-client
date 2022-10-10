@@ -13,24 +13,44 @@ export const useLoginStore = defineStore("login-store", {
         method: "POST",
         body: user,
       }) */
-      const res = await fetch(loginUrl, {
+      await fetch(loginUrl, {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: user,
-      });
-      if (res.ok) {
-        console.log();
+      })
+        .then((res) => {
+          res.json().then((data) => {
+            if (res.ok) {
+              useToast().success(data.message);
+              setTimeout(() => {
+                navigateTo("/Songs");
+              }, 8000);
+            } else {
+              useToast().error(data.message);
+              setTimeout(() => {
+                navigateTo("/login");
+              }, 8000);
+            }
+          });
+        })
+        .catch((err) => {
+          console.log(`error occured ${err}`);
+        });
+      /*  if (res.status == 200) {
         const data = await res.json();
-        useToast().success(data.message);
-        /*  setTimeout(() => {
+        console.log(res);
+        console.log(data);
+
+        useToast().success("waiting....");
+         setTimeout(() => {
           navigateTo("/Songs");
-        }, 8000); */
+        }, 8000);
       } else {
         const data = await res.json();
         useToast().error(data.message);
 
         navigateTo("/login");
-      }
+      } */
       /* .catch((err) => {
           useToast().error(err);
           console.log(err);
