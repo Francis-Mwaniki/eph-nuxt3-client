@@ -15,11 +15,16 @@ export const useRegisterStore = defineStore("register-store", {
         body: user,
       });
       if (res.ok) {
-        let data = await res.json();
+        const data = await res.json();
         useToast().success(data.message);
+        setTimeout(() => {
+          navigateTo("/Songs");
+        }, 8000);
       } else {
-        let data = await res.json();
+        const data = await res.json();
         useToast().error(data.message);
+
+        navigateTo("/signUp");
       }
       /*  .catch((err) => {
           useToast().error(err.data.message);

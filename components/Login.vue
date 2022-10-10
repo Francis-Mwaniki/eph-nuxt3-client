@@ -22,12 +22,7 @@
           >
         </p>
       </div>
-      <Form
-        class="mt-8 space-y-6"
-        @submit="onSubmit"
-        :validation-schema="schema"
-        v-slot="{ isSubmitting }"
-      >
+      <Form class="mt-8 space-y-6" @submit="onSubmit" :validation-schema="schema">
         <Field type="hidden" name="remember" value="true" class="dark:bg-gray-400" />
         <div class="-space-y-px rounded-md shadow-sm">
           <div>
@@ -85,8 +80,6 @@
         <!-- Added today -->
         <div>
           <button
-            :disabled="isSubmitting"
-            :class="{ submitting: isSubmitting }"
             type="submit"
             class="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
           >
@@ -155,11 +148,10 @@ const schema = yup.object({
   password: yup.string().required().min(8),
   rememberMe: yup.boolean(),
 });
-function onSubmit(values, { resetForm }) {
+function onSubmit(values) {
   let results = JSON.stringify(user.value);
   console.log(results);
   loginUser.create(results);
-  resetForm();
 }
 onMounted(() => {});
 </script>

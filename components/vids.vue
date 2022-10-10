@@ -5,7 +5,7 @@
     >
       <div class="" v-for="vid in videos">
         <iframe
-          class="w-full md:w-1/2 md:max-h-screen bg-gray-100 dark:bg-slate-700 object-cover mx-auto"
+          class="w-full min-w-full md:w-1/2 md:max-h-screen bg-gray-100 dark:bg-slate-700 object-cover mx-auto"
           style="height: 300px; width: 100%"
           :src="`https://www.youtube.com/embed/${vid.videoId}`"
           title="LATEST SABBATH SONG UPENDO TELE_BY EPHESUS"

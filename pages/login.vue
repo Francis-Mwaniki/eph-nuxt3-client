@@ -11,9 +11,6 @@ import VerticalNav1 from "~~/components/verticalNav.vue";
 
 export default {
   components: { Login1, VerticalNav1 },
-  setup() {
-    return {};
-  },
 };
 </script>
 

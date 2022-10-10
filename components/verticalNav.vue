@@ -59,7 +59,7 @@
             <span
               ><font-awesome-icon
                 :icon="['fas', 'right-to-bracket']"
-                class="h-10 w-10 sm:text-white dark:text-gray-300"
+                class="h-10 w-10 text-black hover:rounded-full hover:bg-emerald-300 hover:p-4 dark:hover:bg-slate-600 dark:text-gray-300"
             /></span>
           </nuxt-link>
         </p>
@@ -71,7 +71,7 @@
             <span
               ><font-awesome-icon
                 :icon="['fas', 'tv']"
-                class="h-10 w-10 sm:text-white dark:text-gray-300"
+                class="h-10 w-10 text-black dark:text-gray-300 hover:rounded-full dark:hover:bg-slate-600 hover:bg-emerald-300 hover:p-4"
             /></span>
           </nuxt-link>
         </p>
@@ -83,7 +83,7 @@
             <span>
               <font-awesome-icon
                 :icon="['fas', 'music']"
-                class="h-10 w-10 sm:text-white dark:text-gray-300"
+                class="h-10 w-10 text-black dark:text-gray-300 hover:rounded-full dark:hover:bg-slate-600 hover:bg-emerald-300 hover:p-4"
               />
             </span>
           </nuxt-link>
@@ -97,7 +97,7 @@
             <span
               ><font-awesome-icon
                 :icon="['fas', 'house']"
-                class="h-10 w-10 sm:text-white dark:text-gray-300"
+                class="h-10 w-10 text-black dark:text-gray-300 hover:rounded-full dark:hover:bg-slate-600 hover:bg-emerald-300 hover:p-4"
             /></span>
           </nuxt-link>
         </p>

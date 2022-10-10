@@ -61,7 +61,7 @@
                   </div>
                 </div>
                 <div class="hidden md:ml-10 md:block md:space-x-8 md:pr-4">
-                  <a href="#" class="font-medium text-gray-300 dark:hover:to-gray-200"
+                  <a href="#" class="font-medium text-gray-500 dark:hover:to-gray-200"
                     ><span
                       ><font-awesome-icon icon="fa-solid fa-house" class="h-5 w-5"
                     /></span>
@@ -70,7 +70,7 @@
 
                   <nuxt-link
                     to="/Songs"
-                    class="font-medium text-gray-300 dark:hover:to-gray-200"
+                    class="font-medium text-gray-500 dark:hover:to-gray-200"
                     ><span
                       ><font-awesome-icon :icon="['fas', 'headphones']" class="h-5 w-5"
                     /></span>
@@ -79,7 +79,7 @@
 
                   <nuxt-link
                     to="/videos"
-                    class="font-medium text-gray-300 dark:hover:to-gray-200"
+                    class="font-medium text-gray-500 dark:hover:to-gray-200"
                     ><span
                       ><font-awesome-icon :icon="['fas', 'tv']" class="h-5 w-5"
                     /></span>

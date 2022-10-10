@@ -8,5 +8,10 @@
 import Footer1 from "~~/components/Footer.vue";
 export default {
   components: { Footer1 },
+  watch: {
+    $route() {
+      location.reload();
+    },
+  },
 };
 </script>
