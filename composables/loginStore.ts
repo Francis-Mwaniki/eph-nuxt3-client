@@ -16,10 +16,10 @@ export const useLoginStore = defineStore("login-store", {
       const res = await fetch(loginUrl, {
         method: "POST",
         headers: { "Content-type": "application/json" },
-        body: JSON.parse(user),
+        body: user,
       });
       if (res.ok) {
-        console.log(JSON.parse(user));
+        console.log();
         const data = await res.json();
         useToast().success(data.message);
         /*  setTimeout(() => {
@@ -29,7 +29,7 @@ export const useLoginStore = defineStore("login-store", {
         const data = await res.json();
         useToast().error(data.message);
 
-        navigateTo("/signUp");
+        navigateTo("/login");
       }
       /* .catch((err) => {
           useToast().error(err);

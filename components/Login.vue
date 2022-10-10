@@ -150,7 +150,6 @@ const schema = yup.object({
 });
 function onSubmit(values) {
   let results = JSON.stringify(user.value);
-  console.log(results);
   loginUser.create(results);
 }
 onMounted(() => {});
