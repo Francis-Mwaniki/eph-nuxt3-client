@@ -18,7 +18,6 @@ export const useLoginStore = defineStore("login-store", {
         headers: { "Content-type": "application/json" },
         body: user,
       });
-
       if (res.ok) {
         const data = await res.json();
         useToast().success(data.message);
@@ -29,7 +28,7 @@ export const useLoginStore = defineStore("login-store", {
         const data = await res.json();
         useToast().error(data.message);
 
-        navigateTo("/login");
+        navigateTo("/signUp");
       }
       /* .catch((err) => {
           useToast().error(err);
