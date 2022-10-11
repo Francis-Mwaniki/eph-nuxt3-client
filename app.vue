@@ -13,5 +13,12 @@ export default {
       location.reload();
     },
   },
+  setup() {
+    definePageMeta({
+      pageTransition: {
+        name: "rotate",
+      },
+    });
+  },
 };
 </script>
