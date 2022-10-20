@@ -31,6 +31,7 @@
     </div>
     <!-- Card Grid 1 -->
     <Vids1 />
+    <Footer />
   </section>
 </template>
 
@@ -39,6 +40,7 @@ import { ref } from "vue";
 import VerticalNav1 from "../components/verticalNav.vue";
 import Artist2 from "../components/Artist2.vue";
 import Vids1 from "~~/components/vids.vue";
+import Footer from "../components/Footer.vue";
 export default {
   setup() {
     const posts = ref([]);
@@ -71,7 +73,7 @@ export default {
   mounted() {
     this.fetchAllYt2();
   },
-  components: { VerticalNav1, Artist2, Vids1 },
+  components: { VerticalNav1, Artist2, Vids1, Footer },
 };
 </script>
 

@@ -1,4 +1,4 @@
 {
   "vue3snippets.enable-compile-vue-file-on-did-save-code": true,
-  "cSpell.words": ["Iuser"]
+  "cSpell.words": ["Iuser", "Nuxtlink"]
 }

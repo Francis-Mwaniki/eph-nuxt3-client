@@ -1,298 +1,465 @@
-<script setup></script>
 <template>
-  <main>
-    <div
-      class="bg-gray-100 dark:bg-gray-900 dark:text-white text-gray-600 h-screen flex overflow-hidden text-sm"
-    >
-      <div
-        class="bg-white dark:bg-gray-900 dark:border-gray-800 w-20 flex-shrink-0 border-r border-gray-200 flex-col hidden sm:flex"
-      >
-        <div class="h-16 text-blue-500 flex items-center justify-center">
-          <svg
-            class="w-9"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 54 33"
-          >
-            <path
-              fill="currentColor"
-              fill-rule="evenodd"
-              d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </div>
-        <div class="flex mx-auto flex-grow mt-4 flex-col text-gray-400 space-y-4">
-          <button
-            class="h-10 w-12 dark:text-gray-500 rounded-md flex items-center justify-center"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              class="h-5"
-              stroke="currentColor"
-              stroke-width="2"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-              <polyline points="9 22 9 12 15 12 15 22"></polyline>
-            </svg>
-          </button>
-          <button
-            class="h-10 w-12 dark:bg-gray-700 dark:text-white rounded-md flex items-center justify-center bg-blue-100 text-blue-500"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              class="h-5"
-              stroke="currentColor"
-              stroke-width="2"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-            </svg>
-          </button>
-          <button
-            class="h-10 w-12 dark:text-gray-500 rounded-md flex items-center justify-center"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              class="h-5"
-              stroke="currentColor"
-              stroke-width="2"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path
-                d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
-              ></path>
-              <line x1="12" y1="11" x2="12" y2="17"></line>
-              <line x1="9" y1="14" x2="15" y2="14"></line>
-            </svg>
-          </button>
-          <button
-            class="h-10 w-12 dark:text-gray-500 rounded-md flex items-center justify-center"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              class="h-5"
-              stroke="currentColor"
-              stroke-width="2"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <rect x="3" y="3" width="7" height="7"></rect>
-              <rect x="14" y="3" width="7" height="7"></rect>
-              <rect x="14" y="14" width="7" height="7"></rect>
-              <rect x="3" y="14" width="7" height="7"></rect>
-            </svg>
-          </button>
+  <div class="font-sans bg-grey-lighter flex flex-col min-h-screen w-full bg-slate-900">
+    <div>
+      <div class="bg-slate-700">
+        <div class="container mx-auto px-4">
+          <div class="flex items-center md:justify-between py-4">
+            <div class="w-1/4 md:hidden">
+              <svg
+                class="fill-current text-white h-8 w-8"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M16.4 9H3.6c-.552 0-.6.447-.6 1 0 .553.048 1 .6 1h12.8c.552 0 .6-.447.6-1 0-.553-.048-1-.6-1zm0 4H3.6c-.552 0-.6.447-.6 1 0 .553.048 1 .6 1h12.8c.552 0 .6-.447.6-1 0-.553-.048-1-.6-1zM3.6 7h12.8c.552 0 .6-.447.6-1 0-.553-.048-1-.6-1H3.6c-.552 0-.6.447-.6 1 0 .553.048 1 .6 1z"
+                />
+              </svg>
+            </div>
+            <div class="w-1/2 md:w-auto text-center text-white text-2xl font-medium">
+              cointoad
+            </div>
+            <div class="w-1/4 md:w-auto md:flex text-right">
+              <div>
+                <img
+                  class="inline-block h-8 w-8 rounded-full"
+                  src="../assets/images/catoon.png"
+                  alt=""
+                />
+              </div>
+              <div class="hidden md:block md:flex md:items-center ml-2">
+                <span class="text-white text-sm mr-1">Ephesus sardis </span>
+                <div>
+                  <svg
+                    class="fill-current text-white h-4 w-4 block opacity-50"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M4.516 7.548c.436-.446 1.043-.481 1.576 0L10 11.295l3.908-3.747c.533-.481 1.141-.446 1.574 0 .436.445.408 1.197 0 1.615-.406.418-4.695 4.502-4.695 4.502a1.095 1.095 0 0 1-1.576 0S4.924 9.581 4.516 9.163c-.409-.418-.436-1.17 0-1.615z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="flex-grow overflow-hidden h-full flex flex-col">
-        <div
-          class="h-16 lg:flex w-full border-b border-gray-200 dark:border-gray-800 hidden px-10"
-        >
-          <div class="ml-auto flex items-center space-x-7">
-            <button class="flex items-center">
-              <span class="relative flex-shrink-0">
-                <img
-                  class="w-7 h-7 rounded-full"
-                  src="../assets/images/catoon.png"
-                  alt="profile"
-                />
-                <span
-                  class="absolute right-0 -mb-0.5 bottom-0 w-2 h-2 rounded-full bg-green-500 border border-white dark:border-gray-900"
-                ></span>
-              </span>
-              <span class="ml-2">Ephesus Sardis</span>
-              <svg
-                viewBox="0 0 24 24"
-                class="w-4 ml-1 flex-shrink-0"
-                stroke="currentColor"
-                stroke-width="2"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+      <div class="hidden bg-blue-dark md:block bg-slate-600 md:border-b">
+        <div class="container mx-auto px-4">
+          <div class="md:flex">
+            <div class="flex -mb-px mr-8">
+              <a
+                href="#"
+                class="no-underline text-white md:text-white flex items-center py-4 border-b border-blue-dark"
               >
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div class="flex-grow flex overflow-x-hidden">
-          <div
-            class="xl:w-72 w-48 flex-shrink-0 border-r border-gray-200 dark:border-gray-800 h-full overflow-y-auto lg:block hidden p-5"
-          >
-            <div class="text-xs text-gray-400 tracking-wider">USERS</div>
-            <div class="relative mt-2">
-              <input
-                type="text"
-                class="pl-8 h-9 bg-transparent border border-gray-300 dark:border-gray-700 dark:text-white w-full rounded-md text-sm"
-                placeholder="Search"
-              />
-              <svg
-                viewBox="0 0 24 24"
-                class="w-4 absolute text-gray-400 top-1/2 transform translate-x-0.5 -translate-y-1/2 left-2"
-                stroke="currentColor"
-                stroke-width="2"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-            </div>
-            <div class="space-y-4 mt-3">
-              <button
-                class="bg-white p-3 w-full flex flex-col rounded-md dark:bg-gray-800 shadow"
-              >
-                <div
-                  class="flex xl:flex-row flex-col items-center font-medium text-gray-900 dark:text-white pb-2 mb-2 xl:border-b border-gray-200 border-opacity-75 dark:border-gray-700 w-full"
+                <svg
+                  class="h-6 w-6 fill-current mr-2"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
                 >
-                  <img
-                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=046c29138c1335ef8edee7daf521ba50"
-                    class="w-7 h-7 mr-2 rounded-full"
-                    alt="profile"
+                  <path
+                    fill-rule="evenodd"
+                    d="M3.889 3h6.222a.9.9 0 0 1 .889.91v8.18a.9.9 0 0 1-.889.91H3.89A.9.9 0 0 1 3 12.09V3.91A.9.9 0 0 1 3.889 3zM3.889 15h6.222c.491 0 .889.384.889.857v4.286c0 .473-.398.857-.889.857H3.89C3.398 21 3 20.616 3 20.143v-4.286c0-.473.398-.857.889-.857zM13.889 11h6.222a.9.9 0 0 1 .889.91v8.18a.9.9 0 0 1-.889.91H13.89a.9.9 0 0 1-.889-.91v-8.18a.9.9 0 0 1 .889-.91zM13.889 3h6.222c.491 0 .889.384.889.857v4.286c0 .473-.398.857-.889.857H13.89C13.398 9 13 8.616 13 8.143V3.857c0-.473.398-.857.889-.857z"
                   />
-                  Kathyrn Murphy
-                </div>
-                <div class="flex items-center w-full">
-                  <div
-                    class="text-xs py-1 px-2 leading-none dark:bg-gray-900 bg-blue-100 text-blue-500 rounded-md"
-                  >
-                    Design
-                  </div>
-                  <div class="ml-auto text-xs text-gray-500">$1,902.00</div>
-                </div>
-              </button>
+                </svg>
+                Dashboard
+              </a>
             </div>
-          </div>
-          <div class="flex-grow bg-white dark:bg-gray-900 overflow-y-auto">
-            <div class="sm:p-7 p-4">
-              <table class="w-full text-left">
-                <thead>
-                  <tr class="text-gray-400">
-                    <th
-                      class="font-normal px-3 pt-0 pb-3 border-b border-gray-200 dark:border-gray-800"
-                    >
-                      Type
-                    </th>
-                    <th
-                      class="font-normal px-3 pt-0 pb-3 border-b border-gray-200 dark:border-gray-800"
-                    >
-                      Where
-                    </th>
-                    <th
-                      class="font-normal px-3 pt-0 pb-3 border-b border-gray-200 dark:border-gray-800 hidden md:table-cell"
-                    >
-                      Description
-                    </th>
-                    <th
-                      class="font-normal px-3 pt-0 pb-3 border-b border-gray-200 dark:border-gray-800"
-                    >
-                      Amount
-                    </th>
-                    <th
-                      class="font-normal px-3 pt-0 pb-3 border-b border-gray-200 dark:border-gray-800 sm:text-gray-400 text-white"
-                    >
-                      Date
-                    </th>
-                  </tr>
-                </thead>
-                <tbody class="text-gray-600 dark:text-gray-100">
-                  <tr>
-                    <td
-                      class="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800"
-                    >
-                      <div class="flex items-center">
-                        <svg
-                          viewBox="0 0 24 24"
-                          class="w-4 mr-5 text-yellow-500"
-                          stroke="currentColor"
-                          stroke-width="3"
-                          fill="none"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <circle cx="12" cy="12" r="10"></circle>
-                          <line x1="12" y1="8" x2="12" y2="12"></line>
-                          <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                        </svg>
-                        Card
-                      </div>
-                    </td>
-                    <td
-                      class="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800"
-                    >
-                      <div class="flex items-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 512.001 512.001"
-                          class="w-7 h-7 p-1.5 mr-2.5 rounded-lg border border-gray-200 dark:border-gray-800"
-                        >
-                          <path
-                            fill="#03a9f4"
-                            d="M425.457 117.739c-3.121-1.838-6.961-1.966-10.197-.341-3.231 1.629-5.416 4.786-5.803 8.384-.384 3.499-.981 6.997-1.728 10.667-20.885 94.784-62.827 140.885-128.256 140.885h-96c-5.062.009-9.42 3.574-10.432 8.533l-32 149.995-5.717 38.187c-3.287 17.365 8.125 34.107 25.489 37.394 1.915.362 3.858.549 5.807.558h64.213c14.718.045 27.55-10 31.04-24.299l25.941-103.701h55.659c65.685 0 111.083-52.373 127.829-147.477 11.054-45.286-7.234-92.668-45.845-118.785z"
-                          />
-                          <path
-                            fill="#283593"
-                            d="M405.339 38.017C384.261 14.108 354.012.286 322.139.001h-176.64C119.064-.141 96.558 19.2 92.721 45.355L37.873 411.243c-2.627 17.477 9.41 33.774 26.887 36.402 1.586.239 3.189.357 4.793.356h81.92c5.062-.009 9.42-3.574 10.432-8.533l30.187-140.8h87.467c75.904 0 126.059-53.056 149.099-157.867.926-4.178 1.638-8.4 2.133-12.651 5.348-32.335-3.981-65.372-25.452-90.133z"
-                          />
-                        </svg>
-                        PayPal
-                      </div>
-                    </td>
-                    <td
-                      class="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800 md:table-cell hidden"
-                    >
-                      Subscription renewal
-                    </td>
-                    <td
-                      class="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800 text-red-500"
-                    >
-                      - $120.00
-                    </td>
-                    <td
-                      class="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800"
-                    >
-                      <div class="flex items-center">
-                        <div class="sm:flex hidden flex-col">
-                          24.12.2020
-                          <div class="text-gray-400 text-xs">11:16 AM</div>
-                        </div>
-                        <button
-                          class="w-8 h-8 inline-flex items-center justify-center text-gray-400 ml-auto"
-                        >
-                          <svg
-                            viewBox="0 0 24 24"
-                            class="w-5"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            fill="none"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          >
-                            <circle cx="12" cy="12" r="1"></circle>
-                            <circle cx="19" cy="12" r="1"></circle>
-                            <circle cx="5" cy="12" r="1"></circle>
-                          </svg>
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="flex -mb-px mr-8">
+              <nuxt-link
+                to="/"
+                class="no-underline text-white opacity-50 md:text-white md:opacity-100 flex items-center py-4 border-b border-transparent hover:opacity-100 md:hover:border-grey-dark"
+              >
+                <svg
+                  class="h-6 w-6 fill-current mr-2"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M8 7h10V5l4 3.5-4 3.5v-2H8V7zm-6 8.5L6 12v2h10v3H6v2l-4-3.5z"
+                    fill-rule="nonzero"
+                  />
+                </svg>
+                Home
+              </nuxt-link>
+            </div>
+            <div class="flex -mb-px mr-8">
+              <nuxt-link
+                to="/AdminLogin"
+                class="no-underline text-white opacity-50 md:text-white md:opacity-100 flex items-center py-4 border-b border-transparent hover:opacity-100 md:hover:border-grey-dark"
+              >
+                <svg
+                  class="h-6 w-6 fill-current mr-2"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M18 8H5.5v-.5l11-.88v.88H18V6c0-1.1-.891-1.872-1.979-1.717L5.98 5.717C4.891 5.873 4 6.9 4 8v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2zm-1.5 7.006a1.5 1.5 0 1 1 .001-3.001 1.5 1.5 0 0 1-.001 3.001z"
+                    fill-rule="nonzero"
+                  />
+                </svg>
+                Account
+              </nuxt-link>
+            </div>
+            <div class="flex -mb-px mr-8">
+              <a
+                href="#"
+                class="no-underline text-white opacity-50 md:text-white md:opacity-100 flex items-center py-4 border-b border-transparent hover:opacity-100 md:hover:border-grey-dark"
+              >
+                <svg
+                  class="h-6 w-6 fill-current mr-2"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M11 12h2v2h9s-.149-4.459-.2-5.854C21.75 6.82 21.275 6 19.8 6h-3.208l-1.197-2.256C15.064 3.121 14.951 3 14.216 3H9.783c-.735 0-.847.121-1.179.744-.165.311-.7 1.318-1.196 2.256H4.199c-1.476 0-1.945.82-2 2.146C2.145 9.473 2 14 2 14h9v-2zM9.649 4.916c.23-.432.308-.516.817-.516h3.067c.509 0 .588.084.816.516L14.924 6h-5.85l.575-1.084zM13 17h-2v-2H2.5s.124 1.797.199 3.322c.031.633.218 1.678 1.8 1.678H19.5c1.582 0 1.765-1.047 1.8-1.678.087-1.568.2-3.322.2-3.322H13v2z"
+                    fill-rule="nonzero"
+                  />
+                </svg>
+                Tools
+              </a>
+            </div>
+            <div class="flex -mb-px">
+              <a
+                href="#"
+                class="no-underline text-white opacity-50 md:text-white md:opacity-100 flex items-center py-4 border-b border-transparent hover:opacity-100 md:hover:border-grey-dark"
+              >
+                <svg
+                  class="h-6 w-6 fill-current mr-2"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M18.783 12c0-1.049.646-1.875 1.617-2.443a8.932 8.932 0 0 0-.692-1.672c-1.089.285-1.97-.141-2.711-.883-.741-.74-.968-1.621-.683-2.711a8.732 8.732 0 0 0-1.672-.691c-.568.97-1.595 1.615-2.642 1.615-1.048 0-2.074-.645-2.643-1.615-.58.172-1.14.403-1.671.691.285 1.09.059 1.971-.684 2.711-.74.742-1.621 1.168-2.711.883A8.797 8.797 0 0 0 3.6 9.557c.97.568 1.615 1.394 1.615 2.443 0 1.047-.645 2.074-1.615 2.643.173.58.404 1.14.691 1.672 1.09-.285 1.971-.059 2.711.682.741.742.969 1.623.684 2.711.532.288 1.092.52 1.672.693.568-.973 1.595-1.617 2.643-1.617 1.047 0 2.074.645 2.643 1.617a8.963 8.963 0 0 0 1.672-.693c-.285-1.088-.059-1.969.683-2.711.741-.74 1.622-1.166 2.711-.883.287-.532.52-1.092.692-1.672-.973-.569-1.619-1.395-1.619-2.442zM12 15.652a3.653 3.653 0 1 1 0-7.306 3.653 3.653 0 0 1 0 7.306z"
+                    fill-rule="nonzero"
+                  />
+                </svg>
+                Settings
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </main>
+    <div class="flex-grow container mx-auto sm:px-4 pt-6 pb-8">
+      <div
+        class="bg-slate-700 border-t border-b sm:border-l sm:border-r sm:rounded shadow mb-6"
+      >
+        <div class="border-b px-6">
+          <div class="flex justify-between -mb-px">
+            <div class="lg:hidden text-white py-4 text-lg">Price Charts</div>
+            <div class="hidden lg:flex">
+              <button
+                type="button"
+                class="appearance-none py-4 text-white border-b border-blue-dark mr-6"
+              >
+                ksh. 6000
+              </button>
+              <button
+                type="button"
+                class="appearance-none py-4 text-white border-b border-transparent hover:border-grey-dark mr-6"
+              >
+                $ 6000
+              </button>
+              <button
+                type="button"
+                class="appearance-none py-4 text-white border-b border-transparent hover:border-grey-dark"
+              >
+                Ksh 5000
+              </button>
+            </div>
+            <div class="flex text-sm">
+              <button
+                type="button"
+                class="appearance-none py-4 text-white border-b border-transparent hover:border-grey-dark mr-3"
+              >
+                1M
+              </button>
+              <button
+                type="button"
+                class="appearance-none py-4 text-white border-b border-transparent hover:border-grey-dark mr-3"
+              >
+                1D
+              </button>
+              <button
+                type="button"
+                class="appearance-none py-4 text-white border-b border-transparent hover:border-grey-dark mr-3"
+              >
+                1W
+              </button>
+              <button
+                type="button"
+                class="appearance-none py-4 text-white border-b border-blue-dark mr-3"
+              >
+                1M
+              </button>
+              <button
+                type="button"
+                class="appearance-none py-4 text-white border-b border-transparent hover:border-grey-dark mr-3"
+              >
+                1Y
+              </button>
+              <button
+                type="button"
+                class="appearance-none py-4 text-white border-b border-transparent hover:border-grey-dark"
+              >
+                ALL
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center px-6 lg:hidden">
+          <div class="flex-grow flex-no-shrink py-6">
+            <div class="text-white mb-2">
+              <span class="text-3xl align-top text-white">CA$</span>
+              <span class="text-5xl text-white">21,404</span>
+              <span class="text-3xl align-top text-white">.74</span>
+            </div>
+            <div class="text-green-light text-sm text-white">&uarr; 50000</div>
+          </div>
+          <div class="flex-shrink w-32 inline-block relative">
+            <select
+              class="block appearance-none w-full text-white bg-slate-700 border border-grey-light px-4 py-2 pr-8 rounded"
+            >
+              <option>Ksh</option>
+              <option>$</option>
+              <option>N</option>
+            </select>
+            <div
+              class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey"
+            >
+              <svg
+                class="fill-current h-4 w-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="hidden lg:flex">
+          <div class="w-1/3 text-center py-8">
+            <div class="border-r">
+              <div class="text-whiteer mb-2">
+                <span class="text-3xl align-top text-white">CA$</span>
+                <span class="text-5xl text-white">21,404</span>
+                <span class="text-3xl align-top">.74</span>
+              </div>
+              <div class="text-sm uppercase text-grey tracking-wide text-white">
+                Transaction
+              </div>
+            </div>
+          </div>
+          <div class="w-1/3 text-center py-8">
+            <div class="border-r">
+              <div class="text-whiteer mb-2">
+                <span class="text-3xl align-top"
+                  ><span class="text-green align-top text-white">+</span>CA$</span
+                >
+                <span class="text-5xl text-white">12,998</span>
+                <span class="text-3xl align-top text-white">.48</span>
+              </div>
+              <div class="text-sm uppercase text-grey tracking-wide text-white">
+                Since last month (CAD)
+              </div>
+            </div>
+          </div>
+          <div class="w-1/3 text-center py-8">
+            <div>
+              <div class="text-whiteer mb-2">
+                <span class="text-3xl align-top"
+                  ><span class="text-green align-top text-white">+</span></span
+                >
+                <span class="text-5xl text-white">154.47</span>
+                <span class="text-3xl align-top text-white">%</span>
+              </div>
+              <div class="text-sm uppercase text-grey tracking-wide text-white">
+                Since last month (%)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-wrap -mx-4">
+        <div class="w-full mb-6 lg:mb-0 lg:w-1/2 px-4 flex flex-col">
+          <div
+            class="flex-grow flex flex-col bg-slate-700 border-t border-b sm:rounded sm:border shadow overflow-hidden"
+          >
+            <div class="border-b">
+              <div class="flex justify-between px-6 -mb-px">
+                <h3 class="text-white py-4 font-normal text-lg">Your Page</h3>
+                <div class="flex">
+                  <button
+                    type="button"
+                    class="appearance-none py-4 border-b border-blue-dark mr-3 text-white"
+                  >
+                    List
+                  </button>
+                  <button
+                    type="button"
+                    class="appearance-none py-4 text-white border-b border-transparent hover:border-grey-dark"
+                  >
+                    Chart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex-grow flex px-6 py-6 text-whiteer items-center border-b -mx-4"
+            >
+              <div class="w-2/5 xl:w-1/4 px-4 flex items-center">
+                <div class="rounded-full bg-orange inline-flex mr-3">
+                  <svg
+                    class="fill-current text-white h-8 w-8 block"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 32 32"
+                  >
+                    <g fill-rule="evenodd">
+                      <path
+                        d="M21.78 15.37c.51-.61.83-1.4.83-2.26 0-2.74-1.6-4.38-4.24-4.38V5.45c0-.12-.1-.22-.22-.22h-1.27c-.11 0-.2.1-.2.21v3.3h-1.7V5.44c0-.12-.1-.22-.22-.22H13.5c-.12 0-.2.1-.21.21v3.3H9.67c-.12 0-.21.09-.21.21v1.31c0 .12.1.22.21.22h.21c.94 0 1.7.79 1.7 1.75v7c0 .92-.68 1.67-1.55 1.75a.21.21 0 0 0-.18.16l-.33 1.32c-.01.06 0 .13.04.19.04.05.1.08.17.08h3.55v3.3c0 .1.1.2.2.2h1.28c.12 0 .21-.1.21-.22v-3.28h1.7v3.3c0 .1.1.2.21.2h1.27c.12 0 .22-.1.22-.22v-3.28h.85c2.65 0 4.24-1.64 4.24-4.37 0-1.28-.68-2.39-1.68-3zm-6.8-4.01h2.54c.94 0 1.7.78 1.7 1.75 0 .96-.76 1.75-1.7 1.75h-2.55v-3.5zm3.39 8.75h-3.4v-3.5h3.4c.93 0 1.7.78 1.7 1.75 0 .96-.77 1.75-1.7 1.75z"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+                <span class="text-lg text-white">Ksh</span>
+              </div>
+              <div class="hidden md:flex lg:hidden xl:flex w-1/4 px-4 items-center">
+                <div class="bg-orange h-2 rounded-full flex-grow mr-2 text-white"></div>
+                100%
+              </div>
+              <div class="flex w-3/5 md:w/12">
+                <div class="w-1/2 px-4">
+                  <div class="text-right text-white">50%</div>
+                </div>
+                <div class="w-1/2 px-4">
+                  <div class="text-right text-grey text-white">CA$21.28</div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex-grow flex px-6 py-6 text-whiteer items-center border-b -mx-4"
+            >
+              <div class="w-2/5 xl:w-1/4 px-4 flex items-center">
+                <div class="rounded-full bg-grey inline-flex mr-3">
+                  <svg
+                    class="fill-current text-white h-8 w-8 block"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 38 38"
+                  >
+                    <g fill-rule="evenodd">
+                      <path
+                        d="M12.29 28.04l1.29-5.52-1.58.67.63-2.85 1.64-.68L16.52 10h5.23l-1.52 7.14 2.09-.74-.58 2.7-2.05.8-.9 4.34h8.1l-.99 3.8z"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+                <span class="text-lg text-white">$</span>
+              </div>
+              <div class="hidden md:flex lg:hidden xl:flex w-1/4 px-4 items-center">
+                <div class="bg-grey h-2 w-2 rounded-full mr-2 text-white"></div>
+                0%
+              </div>
+              <div class="flex w-3/5 md:w/12">
+                <div class="w-1/2 px-4">
+                  <div class="text-right text-white">40%</div>
+                </div>
+                <div class="w-1/2 px-4">
+                  <div class="text-right text-grey text-white">CA$0.00</div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex-grow flex px-6 py-6 text-whiteer items-center border-b -mx-4"
+            >
+              <div class="w-2/5 xl:w-1/4 px-4 flex items-center">
+                <div class="rounded-full bg-indigo inline-flex mr-3">
+                  <svg
+                    class="fill-current text-white h-8 w-8 block"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 32 32"
+                  >
+                    <g fill-rule="evenodd">
+                      <path
+                        d="M10.13 17.76c-.1-.15-.06-.2.09-.12l5.49 3.09c.15.08.4.08.56 0l5.58-3.08c.16-.08.2-.03.1.11L16.2 25.9c-.1.15-.28.15-.38 0l-5.7-8.13zm.04-2.03a.3.3 0 0 1-.13-.42l5.74-9.2c.1-.15.25-.15.34 0l5.77 9.19c.1.14.05.33-.12.41l-5.5 2.78a.73.73 0 0 1-.6 0l-5.5-2.76z"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+                <span class="text-lg text-white">N</span>
+              </div>
+              <div class="hidden md:flex lg:hidden xl:flex w-1/4 px-4 items-center">
+                <div class="bg-indigo h-2 w-2 rounded-full mr-2"></div>
+                0%
+              </div>
+              <div class="flex w-3/5 md:w/12">
+                <div class="w-1/2 px-4">
+                  <div class="text-right text-white">70%</div>
+                </div>
+                <div class="w-1/2 px-4">
+                  <div class="text-right text-grey text-white">CA$0.00</div>
+                </div>
+              </div>
+            </div>
+            <div class="px-6 py-4">
+              <div class="text-center text-grey text-white">
+                Total Balance &asymp; CA$21.28
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full lg:w-1/2 px-4">
+          <div class="bg-slate-700 border-t border-b sm:rounded sm:border shadow">
+            <div class="border-b">
+              <div class="flex justify-between px-6 -mb-px">
+                <h3 class="text-white py-4 font-normal text-lg text-white">
+                  Recent Activity
+                </h3>
+              </div>
+            </div>
+            <div>
+              <div class="text-center px-6 py-4">
+                <div class="py-8">
+                  <div class="mb-4">
+                    <svg
+                      class="inline-block fill-current text-white h-16 w-16"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M11.933 13.069s7.059-5.094 6.276-10.924a.465.465 0 0 0-.112-.268.436.436 0 0 0-.263-.115C12.137.961 7.16 8.184 7.16 8.184c-4.318-.517-4.004.344-5.974 5.076-.377.902.234 1.213.904.959l2.148-.811 2.59 2.648-.793 2.199c-.248.686.055 1.311.938.926 4.624-2.016 5.466-1.694 4.96-6.112zm1.009-5.916a1.594 1.594 0 0 1 0-2.217 1.509 1.509 0 0 1 2.166 0 1.594 1.594 0 0 1 0 2.217 1.509 1.509 0 0 1-2.166 0z"
+                      />
+                    </svg>
+                  </div>
+                  <p class="text-2xl text-whiteer font-medium mb-4 text-white">
+                    No Transaction yet
+                  </p>
+                  <p class="text-grey max-w-xs mx-auto mb-6 text-white">
+                    You've successfully linked a payment method and can start buying
+                    digital currency.
+                  </p>
+                  <div>
+                    <button
+                      type="button"
+                      class="bg-blue text-white hover:bg-blue-dark border border-blue-dark rounded px-6 py-4"
+                    >
+                      Buy now
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
+
+<script>
+export default {};
+</script>
+
+<style></style>
