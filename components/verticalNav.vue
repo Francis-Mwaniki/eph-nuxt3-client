@@ -57,10 +57,11 @@
             class="sm:h-16 h-7 px-5 flex justify-center items-center w-full focus:text-orange-500"
           >
             <span
-              ><font-awesome-icon
+              ><!-- <font-awesome-icon
                 :icon="['fas', 'right-to-bracket']"
-                class="h-10 w-10 text-black hover:rounded-full hover:bg-emerald-300 hover:p-4 dark:hover:bg-slate-600 dark:text-gray-300"
-            /></span>
+                class="h-10 w-10 text-black dark:text-gray-300"
+              /> --><span class="dark:text-white">login</span></span
+            >
           </nuxt-link>
         </p>
         <p class="text-xl text-center flex justify-end mx-auto items-end pl-20">
@@ -69,36 +70,55 @@
             class="sm:h-16 h-7 px-5 flex justify-center items-center w-full focus:text-orange-500"
           >
             <span
-              ><font-awesome-icon
+              ><!-- <font-awesome-icon
                 :icon="['fas', 'tv']"
-                class="h-10 w-10 text-black dark:text-gray-300 hover:rounded-full dark:hover:bg-slate-600 hover:bg-emerald-300 hover:p-4"
-            /></span>
+                class="h-10 w-10 text-black dark:text-gray-300"
+              /> -->
+              <span class="dark:text-white">video</span>
+            </span>
           </nuxt-link>
         </p>
+        <p class="text-xl text-center flex justify-end mx-auto items-end pl-20">
+          <nuxt-link
+            to="/AdminDashboard"
+            class="sm:h-16 h-7 px-5 flex justify-center items-center w-full focus:text-orange-500"
+          >
+            <span>
+              <!-- <font-awesome-icon
+                :icon="['fas', 'lock']"
+                class="h-10 w-10 text-black dark:text-gray-300"
+              /> -->
+              <span class="dark:text-white">Admin</span>
+            </span>
+          </nuxt-link>
+        </p>
+
         <p class="text-xl text-center flex justify-end mx-auto items-end pl-20">
           <nuxt-link
             to="/Songs"
             class="sm:h-16 h-7 px-5 flex justify-center items-center w-full focus:text-orange-500"
           >
             <span>
-              <font-awesome-icon
+              <!--  <font-awesome-icon
                 :icon="['fas', 'music']"
-                class="h-10 w-10 text-black dark:text-gray-300 hover:rounded-full dark:hover:bg-slate-600 hover:bg-emerald-300 hover:p-4"
-              />
+                class="h-10 w-10 text-black dark:text-gray-300"
+              /> -->
+              <span class="dark:text-white">music</span>
             </span>
           </nuxt-link>
         </p>
-
-        <p class="text-xl flex justify-end mx-auto items-end pl-20">
+        <p class="text-xl text-center flex justify-end mx-auto items-end pl-20">
           <nuxt-link
             to="/"
             class="sm:h-16 h-7 px-5 flex justify-center items-center w-full focus:text-orange-500"
           >
-            <span
-              ><font-awesome-icon
+            <span>
+              <!--   <font-awesome-icon
                 :icon="['fas', 'house']"
-                class="h-10 w-10 text-black dark:text-gray-300 hover:rounded-full dark:hover:bg-slate-600 hover:bg-emerald-300 hover:p-4"
-            /></span>
+                class="h-10 w-10 text-black dark:text-gray-300"
+              /> -->
+              <span class="dark:text-white">home</span>
+            </span>
           </nuxt-link>
         </p>
       </div>

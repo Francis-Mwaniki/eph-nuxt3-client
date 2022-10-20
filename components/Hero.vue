@@ -25,12 +25,6 @@
                 <div class="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
                   <div class="flex w-full items-center justify-between md:w-auto">
                     <a href="#">
-                      <span class="sr-only">Your Company</span>
-                      <img
-                        alt="Your Company"
-                        class="h-8 w-auto sm:h-10 rounded-full"
-                        src="../assets/images/catoon.png"
-                      />
                       <!-- https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600 -->
                     </a>
                     <div class="-mr-2 flex items-center md:hidden">
@@ -75,6 +69,14 @@
                       ><font-awesome-icon :icon="['fas', 'headphones']" class="h-5 w-5"
                     /></span>
                     Written songs</nuxt-link
+                  >
+                  <nuxt-link
+                    to="/AdminDashboard"
+                    class="font-medium text-gray-500 dark:hover:to-gray-200"
+                    ><span
+                      ><font-awesome-icon :icon="['fas', 'lock']" class="h-5 w-5"
+                    /></span>
+                    Admin</nuxt-link
                   >
 
                   <nuxt-link
@@ -197,6 +199,17 @@
                         class="h-5 w-5 dark:text-gray-300"
                     /></span>
                     Videos</nuxt-link
+                  >
+                  <nuxt-link
+                    to="/AdminDashboard"
+                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 hover:text-gray-900"
+                  >
+                    <span
+                      ><font-awesome-icon
+                        :icon="['fas', 'lock']"
+                        class="h-5 w-5 dark:text-gray-300"
+                    /></span>
+                    Admin</nuxt-link
                   >
                 </div>
                 <a
