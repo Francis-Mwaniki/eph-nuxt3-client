@@ -2,8 +2,9 @@
   <footer class="text-center bg-slate-900 text-white relative z-20">
     <div class="container px-6 pt-6">
       <div class="flex justify-center mb-6 relative z-20">
+        <!-- fb -->
         <a
-          href="#!"
+          href="https://www.facebook.com/profile.php?id=100063851031353"
           type="button"
           class="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
         >
@@ -23,9 +24,9 @@
             ></path>
           </svg>
         </a>
-
+        <!-- twitter -->
         <a
-          href="#!"
+          href="https://twitter.com/ephesus_sardis?t=arWOT4Y_TD1pCYgKP-ezgw&s=09"
           type="button"
           class="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
         >
@@ -45,9 +46,9 @@
             ></path>
           </svg>
         </a>
-
+        <!-- Gmail -->
         <a
-          href="#!"
+          href="mailto:ephesussardis001@gmail.com"
           type="button"
           class="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
         >
@@ -67,9 +68,9 @@
             ></path>
           </svg>
         </a>
-
+        <!-- Instagram -->
         <a
-          href="#!"
+          href="https://www.instagram.com/invites/contact/?i=1f3k75uzyfofu&utm_content=f5f6ncz"
           type="button"
           class="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
         >
@@ -89,9 +90,9 @@
             ></path>
           </svg>
         </a>
-
+        <!-- Linkedln -->
         <a
-          href="#!"
+          href="https://www.linkedin.com/in/%D2%93%CA%80%E1%B4%80%C9%B4%E1%B4%84%C9%AAs-%E1%B4%8D%E1%B4%A1%E1%B4%80%C9%B4%C9%AA%E1%B4%8B%C9%AA-378603220"
           type="button"
           class="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
         >
@@ -111,9 +112,9 @@
             ></path>
           </svg>
         </a>
-
+        <!-- github -->
         <a
-          href="#!"
+          href="https://github.com/Francis-Mwaniki"
           type="button"
           class="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
         >
