@@ -1,15 +1,9 @@
 <template>
   <div
-    class="flex justify-center flex-col gap-y-3 items-center mx-auto p-3 text-slate-900 text-3xl"
+    class="flex justify-center flex-col gap-y-3 items-center mx-auto p-3 text-slate-900 text-3xl bg-slate-800"
     v-if="!auth"
   >
-    <button class="bg-indigo-600 text-white px-7 py-2 rounded-lg ring-2 ring-red-500">
-      <nuxt-link to="/AdminLogin">Login As an Admin</nuxt-link>
-    </button>
-    <p class=" ">{{ msg }}</p>
-    <button class="bg-indigo-600 text-white px-7 py-2 rounded-lg ring-2 ring-red-500">
-      <nuxt-link to="/">(:Home</nuxt-link>
-    </button>
+    <Terms :msg="msg" />
   </div>
   <div
     class="font-sans bg-grey-lighter flex flex-col min-h-screen w-full bg-slate-900"
@@ -477,6 +471,7 @@
 
 <script>
 import { ref } from "vue";
+import Terms from "../components/Terms.vue";
 
 export default {
   setup() {
@@ -505,7 +500,6 @@ export default {
         const content = await response.json();
         this.msg = content.message;
         this.auth = false;
-
         console.log(content);
       }
     } catch (error) {
@@ -536,6 +530,7 @@ export default {
       }
     },
   },
+  components: { Terms },
 };
 </script>
 
