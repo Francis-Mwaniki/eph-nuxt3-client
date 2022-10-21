@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gradient-to-tr from-fuchsia-300 to-sky-500">
+  <div class="bg-gradient-to-tr from-fuchsia-300 dark:bg-slate-900 to-sky-500">
     <section
       id="login"
       class="p-4 flex flex-col justify-center min-h-screen max-w-md mx-auto"
@@ -8,12 +8,7 @@
         <div class="flex items-center justify-center font-black m-3 mb-12">
           <h1 class="tracking-wide text-3xl text-gray-900">Add Song</h1>
         </div>
-        <form
-          id="login_form"
-          action="api_login"
-          method="POST"
-          class="flex flex-col justify-center"
-        >
+        <form class="flex flex-col justify-center">
           <div class="flex justify-between items-center mb-3">
             <div class="inline-flex items-center self-start">
               <svg
@@ -31,44 +26,7 @@
               </svg>
               <span class="font-bold text-gray-900"></span>
             </div>
-            <div class="flex">
-              <button type="button" class="bg-yellow-600 p-1.5 font-bold rounded">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </button>
-
-              <input
-                id="item_count"
-                type="number"
-                value="1"
-                class="max-w-[100px] font-bold font-mono py-1.5 px-2 mx-1.5 block border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 focus:invalid:border-red-500 focus:invalid:ring-red-500"
-              />
-
-              <button type="button" class="bg-green-600 p-1.5 font-bold rounded">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </button>
-            </div>
+            <ToggleMode />
           </div>
           <label class="text-sm font-medium">Song Title</label>
           <input
@@ -96,4 +54,8 @@
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  components: {},
+};
+</script>

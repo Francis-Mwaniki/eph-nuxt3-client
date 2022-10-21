@@ -10,6 +10,7 @@
     </h1>
 
     <Artist2 />
+    <ToggleMode />
 
     <!-- Card Grid 1 -->
     <Vids1 />
@@ -20,6 +21,7 @@
 import VerticalNav1 from "../components/verticalNav.vue";
 import Artist2 from "../components/Artist2.vue";
 import Vids1 from "~~/components/vids.vue";
+import ToggleMode from "../components/toggleMode.vue";
 
 export default {
   methods: {
@@ -41,7 +43,7 @@ export default {
     },
   },
   mounted() {},
-  components: { VerticalNav1, Artist2, Vids1 },
+  components: { VerticalNav1, Artist2, Vids1, ToggleMode },
 };
 </script>
 
