@@ -1,15 +1,18 @@
 <template>
   <!-- component -->
-  <body class="bg-slate-900 font-sans antialiased overflow-hidden mt-0">
+  <body class="dark:bg-slate-900 bg-slate-200 font-sans antialiased overflow-hidden mt-0">
     <div class="container mx-auto md:my-36 my-44">
       <nuxt-link
         to="/AdminDashboard"
-        class="m-6 bg-slate-700 rounded-md ring-1 ring-emerald-500 p-3 absolute top-0"
-        ><span class="text-white">👉Go to dashboard 🚀</span></nuxt-link
+        class="m-6 dark:bg-slate-700 bg-slate-400 rounded-md ring-1 ring-emerald-500 p-3 absolute top-0"
+        ><span class="dark:text-white text-gray-900"
+          >👉Go to dashboard 🚀</span
+        ></nuxt-link
       >
+
       <div>
         <div
-          class="bg-slate-800 relative shadow rounded-lg w-5/6 md:w-4/6 lg:w-3/6 xl:w-2/6 mx-auto"
+          class="dark:bg-slate-800 bg-slate-400 relative shadow rounded-lg w-5/6 md:w-4/6 lg:w-3/6 xl:w-2/6 mx-auto"
         >
           <div class="flex justify-center">
             <img
@@ -20,10 +23,11 @@
           </div>
 
           <div class="mt-16">
-            <h1 class="font-bold text-center text-3xl text-gray-300">
+            <h1 class="font-bold text-center text-3xl dark:text-gray-300 text-gray-700">
               {{ name }}
             </h1>
-            <p class="text-center text-sm text-gray-300 font-medium">
+
+            <p class="text-center text-sm dark:text-gray-300 text-gray-700 font-medium">
               {{ email }}
             </p>
             <p>
@@ -32,48 +36,50 @@
             <div class="my-5 px-6">
               <a
                 href="#"
-                class="text-gray-200 block rounded-lg text-center font-medium leading-6 px-6 py-3 bg-indigo-600 hover:bg-teal-800 hover:text-white"
+                class="dark:text-gray-300 text-gray-300 block rounded-lg text-center font-medium leading-6 px-6 py-3 bg-indigo-600 hover:bg-teal-800 hover:text-white"
                 >Permanent <span class="font-bold">{{ email }}</span></a
               >
             </div>
             <div class="flex justify-between items-center my-5 px-6">
               <a
                 href="#!"
-                class="text-gray-500 hover:text-gray-300 hover:bg-indigo-600 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
+                class="dark:text-gray-500 text-gray-700 hover:text-gray-300 hover:bg-indigo-600 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
                 >Love</a
               >
               <a
                 href="#!"
-                class="text-gray-500 hover:text-gray-300 hover:bg-indigo-600 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
+                class="dark:text-gray-500 text-gray-700 hover:text-gray-300 hover:bg-indigo-600 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
                 >Joy</a
               >
               <a
                 href="#!"
-                class="text-gray-500 hover:text-gray-300 hover:bg-indigo-600 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
+                class="dark:text-gray-500 text-gray-700 hover:text-gray-300 hover:bg-indigo-600 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
                 >Peace</a
               >
               <a
                 href="#!"
-                class="text-gray-500 hover:text-gray-300 hover:bg-indigo-600 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
+                class="dark:text-gray-500 text-gray-700 hover:text-gray-300 hover:bg-indigo-600 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
                 >Discipline</a
               >
             </div>
 
             <div class="w-full">
-              <h3 class="font-medium text-gray-300 text-left px-6">{{ id }}</h3>
-              <div class="mt-5 w-full flex flex-col items-center overflow-hidden text-sm">
+              <h3 class="font-medium dark:text-gray-300 text-gray-700 text-left px-6">
+                {{ id }}
+              </h3>
+              <div class="mt-5 w-full flex flex-row items-center overflow-hidden text-sm">
                 <a
-                  href="#"
-                  class="w-full border-t border-gray-100 text-gray-300 py-4 pl-6 pr-3 w-full block hover:bg-indigo-600 transition duration-150"
+                  class="w-full border-t border-gray-100 dark:text-gray-300 text-gray-700 py-4 pl-6 pr-3 w-full block dark:hover:bg-indigo-600 hover:bg-indigo-400 transition duration-150"
                 >
                   <img
                     src="../assets/images/catoon.png"
                     alt=""
-                    class="rounded-full h-6 shadow-md inline-block mr-2 text-gray-300"
+                    class="rounded-full h-6 shadow-md inline-block mr-2 dark:text-gray-300 text-gray-700"
                   />
                   Updated his status
-                  <span class="text-gray-300 text-xs">24 min ago</span>
+                  <span class="dark:text-gray-300 text-gray-700 text-xs">24 min ago</span>
                 </a>
+                <span><ToggleMode /></span>
               </div>
             </div>
           </div>
@@ -84,6 +90,7 @@
 </template>
 
 <script>
+import ToggleMode from "../components/toggleMode.vue";
 export default {
   data() {
     return {
@@ -120,6 +127,7 @@ export default {
       console.log(error);
     }
   },
+  components: { ToggleMode },
 };
 </script>
 

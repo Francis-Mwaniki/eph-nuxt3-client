@@ -1,21 +1,21 @@
 <template>
   <div
-    class="flex justify-center flex-col gap-y-3 items-center mx-auto p-3 text-slate-900 text-3xl bg-slate-800"
+    class="flex justify-center flex-col gap-y-3 items-center mx-auto p-3 text-slate-900 text-3xl dark:bg-slate-800 bg-slate-400"
     v-if="!auth"
   >
     <Terms :msg="msg" />
   </div>
   <div
-    class="font-sans bg-grey-lighter flex flex-col min-h-screen w-full bg-slate-900"
+    class="font-sans bg-grey-lighter flex flex-col min-h-screen w-full dark:bg-slate-900 bg-slate-200"
     v-else
   >
     <div>
-      <div class="bg-slate-800">
+      <div class="dark:bg-slate-800 bg-slate-200">
         <div class="container mx-auto px-4">
           <div class="flex items-center md:justify-between py-4">
             <div class="w-1/4 md:hidden">
               <svg
-                class="fill-current text-white h-8 w-8"
+                class="fill-current dark:text-white text-black h-8 w-8"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
               >
@@ -24,22 +24,26 @@
                 />
               </svg>
             </div>
+            <div>
+              <ToggleMode />
+            </div>
 
             <div class="w-1/4 md:w-auto md:flex text-right">
               <div>
                 <img
-                  class="inline-block h-8 w-8 rounded-full"
+                  class="inline-block h-8 w-8 rounded-full bg-slate-700 dark:bg-slate-800"
                   src="../assets/images/catoon.png"
                   alt=""
                 />
               </div>
-              <div class="hidden md:block md:flex md:items-center ml-2">
-                <span class="text-white text-sm mr-1">{{
+
+              <div class="hidden md:block md:flex md:items-center ml-2 dark:text-white">
+                <span class="dark:text-white text-black text-sm mr-1">{{
                   auth ? msg : "not signed in"
                 }}</span>
                 <div>
                   <svg
-                    class="fill-current text-white h-4 w-4 block opacity-50"
+                    class="fill-current dark:text-white text-gray-700 h-4 w-4 block opacity-50"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                   >
@@ -53,13 +57,15 @@
           </div>
         </div>
       </div>
-      <div class="hidden bg-blue-dark md:block bg-slate-800 md:border-b">
+      <div
+        class="hidden bg-blue-dark md:block dark:bg-slate-800 bg-indigo-600 md:border-b"
+      >
         <div class="container mx-auto px-4">
           <div class="md:flex">
             <div class="flex -mb-px mr-8">
               <a
                 href="#"
-                class="no-underline text-white md:text-white flex items-center py-4 border-b border-blue-dark"
+                class="no-underline dark:text-white text-gray-600 md:text-white flex items-center py-4 border-b border-blue-dark"
               >
                 <svg
                   class="h-6 w-6 fill-current mr-2"
@@ -98,7 +104,7 @@
                   <button
                     @click="this.closeAccount = !this.closeAccount"
                     type="button"
-                    class="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100"
+                    class="inline-flex w-full justify-center rounded-md border border-gray-300bg-slate-800 px-4 py-2 text-sm bg-transparent font-medium text-gray-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100"
                     id="menu-button"
                     aria-expanded="true"
                     aria-haspopup="true"
@@ -122,18 +128,18 @@
                 </div>
                 <div
                   v-show="closeAccount"
-                  class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white dark:bg-slate-700 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                   role="menu"
                   aria-orientation="vertical"
                   aria-labelledby="menu-button"
                   tabindex="-1"
                 >
-                  <div class="py-1" role="none">
+                  <div class="py-1 dark:bg-slate-800 bg-slate-300" role="none">
                     <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
                     <nuxt-link
                       to="/AdminRegister"
                       href="#"
-                      class="text-gray-700 block px-4 py-2 text-sm"
+                      class="text-gray-700 dark:text-gray-400 block px-4 py-2 text-sm"
                       role="menuitem"
                       tabindex="-1"
                       id="menu-item-0"
@@ -144,7 +150,7 @@
                       <button
                         @click="logout"
                         type="submit"
-                        class="text-gray-700 block w-full px-4 py-2 text-left text-sm"
+                        class="text-gray-700 dark:text-gray-400 block w-full px-4 py-2 text-left text-sm"
                         role="menuitem"
                         tabindex="-1"
                         id="menu-item-3"
@@ -198,27 +204,29 @@
     </div>
     <div class="flex-grow container mx-auto sm:px-4 pt-6 pb-8">
       <div
-        class="bg-slate-800 border-t border-b sm:border-l sm:border-r sm:rounded shadow mb-6"
+        class="dark:bg-slate-800 bg-slate-300 border-t border-b sm:border-l sm:border-r sm:rounded shadow mb-6"
       >
         <div class="border-b px-6">
           <div class="flex justify-between -mb-px">
-            <div class="lg:hidden text-white py-4 text-lg">Price Charts</div>
+            <div class="lg:hidden dark:text-white text-gray-700 py-4 text-lg">
+              Price Charts
+            </div>
             <div class="hidden lg:flex">
               <button
                 type="button"
-                class="appearance-none py-4 text-white border-b border-blue-dark mr-6"
+                class="appearance-none py-4 dark:text-white text-gray-700 border-b border-blue-dark mr-6"
               >
                 ksh. 6000
               </button>
               <button
                 type="button"
-                class="appearance-none py-4 text-white border-b border-transparent hover:border-grey-dark mr-6"
+                class="appearance-none py-4 dark:text-white text-gray-700 border-b border-transparent hover:border-grey-dark mr-6"
               >
                 $ 6000
               </button>
               <button
                 type="button"
-                class="appearance-none py-4 text-white border-b border-transparent hover:border-grey-dark"
+                class="appearance-none py-4 dark:text-white text-gray-700 border-b border-transparent hover:border-grey-dark"
               >
                 Ksh 5000
               </button>
@@ -226,37 +234,37 @@
             <div class="flex text-sm">
               <button
                 type="button"
-                class="appearance-none py-4 text-white border-b border-transparent hover:border-grey-dark mr-3"
+                class="appearance-none py-4 dark:text-white text-gray-700 border-b border-transparent hover:border-grey-dark mr-3"
               >
                 1M
               </button>
               <button
                 type="button"
-                class="appearance-none py-4 text-white border-b border-transparent hover:border-grey-dark mr-3"
+                class="appearance-none py-4 dark:text-white text-gray-700 border-b border-transparent hover:border-grey-dark mr-3"
               >
                 1D
               </button>
               <button
                 type="button"
-                class="appearance-none py-4 text-white border-b border-transparent hover:border-grey-dark mr-3"
+                class="appearance-none py-4 dark:text-white text-gray-700 border-b border-transparent hover:border-grey-dark mr-3"
               >
                 1W
               </button>
               <button
                 type="button"
-                class="appearance-none py-4 text-white border-b border-blue-dark mr-3"
+                class="appearance-none py-4 dark:text-white text-gray-700 border-b border-blue-dark mr-3"
               >
                 1M
               </button>
               <button
                 type="button"
-                class="appearance-none py-4 text-white border-b border-transparent hover:border-grey-dark mr-3"
+                class="appearance-none py-4 dark:text-white text-gray-700 border-b border-transparent hover:border-grey-dark mr-3"
               >
                 1Y
               </button>
               <button
                 type="button"
-                class="appearance-none py-4 text-white border-b border-transparent hover:border-grey-dark"
+                class="appearance-none py-4 dark:text-white text-gray-700 border-b border-transparent hover:border-grey-dark"
               >
                 ALL
               </button>
@@ -265,19 +273,21 @@
         </div>
         <div class="flex items-center px-6 lg:hidden">
           <div class="flex-grow flex-no-shrink py-6">
-            <div class="text-white mb-2">
-              <span class="text-5xl text-white">Users</span>
-              <span class="text-3xl align-top text-white">50</span>
+            <div class="dark:text-white text-gray-700 mb-2">
+              <span class="text-5xl dark:text-white text-gray-700">Users</span>
+              <span class="text-3xl align-top dark:text-white text-gray-700">50</span>
             </div>
-            <div class="text-green-light text-sm text-white">&uarr; 50000</div>
+            <div class="text-green-light text-sm dark:text-white text-gray-700">
+              &uarr; 50000
+            </div>
           </div>
           <div class="flex-shrink w-32 inline-block relative">
             <select
-              class="block appearance-none w-full text-white bg-slate-800 border border-grey-light px-4 py-2 pr-8 rounded"
+              class="block appearance-none w-full dark:text-white text-gray-700 bg-slate-300 dark:bg-slate-800 border border-grey-light px-4 py-2 pr-8 rounded"
             >
-              <option>Ksh</option>
-              <option>$</option>
-              <option>N</option>
+              <option class="dark:text-white text-gray-700">Ksh</option>
+              <option class="dark:text-white text-gray-700">$</option>
+              <option class="dark:text-white text-gray-700">N</option>
             </select>
             <div
               class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey"
@@ -298,25 +308,29 @@
           <div class="w-1/3 text-center py-8">
             <div class="border-r">
               <div class="text-whiteer mb-2">
-                <span class="text-5xl text-white">Users</span>
+                <span class="text-5xl dark:text-white text-gray-700">Users</span>
                 <span class="text-xl align-top text-white rounded-full bg-blue-600 p-1"
                   >74</span
                 >
               </div>
-              <div class="text-sm uppercase text-grey tracking-wide text-white">
+              <div
+                class="text-sm uppercase text-grey tracking-wide dark:text-white text-gray-700"
+              >
                 Transaction
               </div>
             </div>
           </div>
           <div class="w-1/3 text-center py-8">
             <div class="border-r">
-              <div class="text-whiteer mb-2">
-                <span class="text-5xl text-white">You</span>
+              <div class="dark:text-white text-gray-700 mb-2">
+                <span class="text-5xl dark:text-white text-gray-700">You</span>
                 <span class="text-xl align-top text-white rounded-full bg-blue-600 p-1"
                   >74</span
                 >
               </div>
-              <div class="text-sm uppercase text-grey tracking-wide text-white">
+              <div
+                class="text-sm uppercase text-grey tracking-wide dark:text-white text-gray-700"
+              >
                 Track
               </div>
             </div>
@@ -324,12 +338,14 @@
           <div class="w-1/3 text-center py-8">
             <div>
               <div class="text-whiteer mb-2">
-                <span class="text-5xl text-white">Track</span>
+                <span class="text-5xl dark:text-white text-gray-700">Track</span>
                 <span class="text-xl align-top text-white rounded-full bg-blue-600 p-1"
                   >74</span
                 >
               </div>
-              <div class="text-sm uppercase text-grey tracking-wide text-white">
+              <div
+                class="text-sm uppercase text-grey tracking-wide dark:text-white text-gray-700"
+              >
                 percentage(%)
               </div>
             </div>
@@ -339,32 +355,36 @@
       <div class="flex flex-wrap -mx-4">
         <div class="w-full mb-6 lg:mb-0 lg:w-1/2 px-4 flex flex-col">
           <div
-            class="flex-grow flex flex-col bg-slate-800 border-t border-b sm:rounded sm:border shadow overflow-hidden"
+            class="flex-grow flex flex-col dark:bg-slate-800 bg-slate-300 border-t border-b sm:rounded sm:border shadow overflow-hidden"
           >
             <div class="border-b">
               <div class="flex justify-between px-6 -mb-px">
-                <h3 class="text-white py-4 font-normal text-lg">Your Page</h3>
+                <h3 class="dark:text-white text-gray-700 py-4 font-normal text-lg">
+                  Your Page
+                </h3>
                 <div class="flex">
                   <button
                     type="button"
-                    class="appearance-none py-4 border-b border-blue-dark mr-3 text-white"
+                    class="appearance-none py-4 border-b border-blue-dark mr-3 dark:text-white text-gray-700"
                   >
                     CODE
                   </button>
                   <button
                     type="button"
-                    class="appearance-none py-4 text-white border-b border-transparent hover:border-grey-dark"
+                    class="appearance-none py-4 dark:text-white text-gray-700 border-b border-transparent hover:border-grey-dark"
                   >
                     Amount
                   </button>
                 </div>
               </div>
             </div>
-            <div class="flex-grow flex px-6 py-6 text-white items-center border-b -mx-4">
+            <div
+              class="flex-grow flex px-6 py-6 dark:text-white text-gray-700 items-center border-b -mx-4"
+            >
               <div class="w-2/5 xl:w-1/4 px-4 flex items-center">
                 <div class="rounded-full bg-orange inline-flex mr-3">
                   <svg
-                    class="fill-current text-white h-8 w-8 block"
+                    class="fill-current dark:text-white text-gray-700 h-8 w-8 block"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 32 32"
                   >
@@ -375,26 +395,32 @@
                     </g>
                   </svg>
                 </div>
-                <span class="text-lg text-white">Ksh</span>
+                <span class="text-lg dark:text-white text-gray-700">Ksh</span>
               </div>
               <div class="hidden md:flex lg:hidden xl:flex w-1/4 px-4 items-center">
-                <div class="bg-orange h-2 rounded-full flex-grow mr-2 text-white"></div>
+                <div
+                  class="bg-orange h-2 rounded-full flex-grow mr-2 dark:text-white text-gray-700"
+                ></div>
                 100%
               </div>
               <div class="flex w-3/5 md:w/12">
                 <div class="w-1/2 px-4">
-                  <div class="text-right text-white">50%</div>
+                  <div class="text-right dark:text-white text-gray-700">50%</div>
                 </div>
                 <div class="w-1/2 px-4">
-                  <div class="text-right text-grey text-white">ksh 21.28</div>
+                  <div class="text-right text-grey dark:text-white text-gray-700">
+                    ksh 21.28
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="flex-grow flex px-6 py-6 text-white items-center border-b -mx-4">
+            <div
+              class="flex-grow flex px-6 py-6 dark:text-white text-gray-700 items-center border-b -mx-4"
+            >
               <div class="w-2/5 xl:w-1/4 px-4 flex items-center">
                 <div class="rounded-full bg-grey inline-flex mr-3">
                   <svg
-                    class="fill-current text-white h-8 w-8 block"
+                    class="fill-current dark:text-white text-gray-700 h-8 w-8 block"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 38 38"
                   >
@@ -405,26 +431,32 @@
                     </g>
                   </svg>
                 </div>
-                <span class="text-lg text-white">$</span>
+                <span class="text-lg dark:text-white text-gray-700">$</span>
               </div>
               <div class="hidden md:flex lg:hidden xl:flex w-1/4 px-4 items-center">
-                <div class="bg-grey h-2 w-2 rounded-full mr-2 text-white"></div>
+                <div
+                  class="bg-grey h-2 w-2 rounded-full mr-2 dark:text-white text-gray-700"
+                ></div>
                 0%
               </div>
               <div class="flex w-3/5 md:w/12">
                 <div class="w-1/2 px-4">
-                  <div class="text-right text-white">40%</div>
+                  <div class="text-right dark:text-white text-gray-700">40%</div>
                 </div>
                 <div class="w-1/2 px-4">
-                  <div class="text-right text-grey text-white">Ksh 90.00</div>
+                  <div class="text-right text-grey dark:text-white text-gray-700">
+                    Ksh 90.00
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="flex-grow flex px-6 py-6 text-white items-center border-b -mx-4">
+            <div
+              class="flex-grow flex px-6 py-6 dark:text-white text-gray-700 items-center border-b -mx-4"
+            >
               <div class="w-2/5 xl:w-1/4 px-4 flex items-center">
                 <div class="rounded-full bg-indigo inline-flex mr-3">
                   <svg
-                    class="fill-current text-white h-8 w-8 block"
+                    class="fill-current dark:text-white text-gray-700 h-8 w-8 block"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 32 32"
                   >
@@ -435,7 +467,7 @@
                     </g>
                   </svg>
                 </div>
-                <span class="text-lg text-white">N</span>
+                <span class="text-lg dark:text-white text-gray-700">N</span>
               </div>
               <div class="hidden md:flex lg:hidden xl:flex w-1/4 px-4 items-center">
                 <div class="bg-indigo h-2 w-2 rounded-full mr-2"></div>
@@ -443,25 +475,31 @@
               </div>
               <div class="flex w-3/5 md:w/12">
                 <div class="w-1/2 px-4">
-                  <div class="text-right text-white">70%</div>
+                  <div class="text-right dark:text-white text-gray-700">70%</div>
                 </div>
                 <div class="w-1/2 px-4">
-                  <div class="text-right text-grey text-white">Ksh 1990.00</div>
+                  <div class="text-right text-grey dark:text-white text-gray-700">
+                    Ksh 1990.00
+                  </div>
                 </div>
               </div>
             </div>
             <div class="px-6 py-4">
-              <div class="text-center text-grey text-white">
+              <div class="text-center text-grey dark:text-white text-gray-700">
                 Total Balance &asymp; Ksh21.28
               </div>
             </div>
           </div>
         </div>
         <div class="w-full lg:w-1/2 px-4">
-          <div class="bg-slate-800 border-t border-b sm:rounded sm:border shadow">
+          <div
+            class="dark:bg-slate-800 border-t border-b sm:rounded sm:border shadow bg-slate-300"
+          >
             <div class="border-b">
               <div class="flex justify-between px-6 -mb-px">
-                <h3 class="text-white py-4 font-normal text-lg">Recent Activity</h3>
+                <h3 class="dark:text-white text-gray-700 py-4 font-normal text-lg">
+                  Recent Activity
+                </h3>
               </div>
             </div>
             <div>
@@ -469,7 +507,7 @@
                 <div class="py-8">
                   <div class="mb-4">
                     <svg
-                      class="inline-block fill-current text-white h-16 w-16"
+                      class="inline-block fill-current dark:text-white text-gray-700 h-16 w-16"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
                     >
@@ -478,17 +516,19 @@
                       />
                     </svg>
                   </div>
-                  <p class="text-2xl text-whiteer font-medium mb-4 text-white">
+                  <p class="text-2xl font-medium mb-4 dark:text-white text-gray-700">
                     No Transaction yet
                   </p>
-                  <p class="text-grey max-w-xs mx-auto mb-6 text-white">
+                  <p
+                    class="text-grey max-w-xs mx-auto mb-6 dark:text-white text-gray-700"
+                  >
                     You've successfully linked a payment method and can start buying
                     digital currency.
                   </p>
                   <div>
                     <button
                       type="button"
-                      class="bg-blue text-white hover:bg-blue-dark border border-blue-dark rounded px-6 py-4"
+                      class="bg-blue dark:text-white text-gray-700 hover:bg-blue-dark border border-blue-dark rounded px-6 py-4"
                     >
                       Buy now
                     </button>
@@ -506,6 +546,7 @@
 <script>
 import { ref } from "vue";
 import Terms from "../components/Terms.vue";
+import ToggleMode from "../components/toggleMode.vue";
 
 export default {
   setup() {
@@ -565,7 +606,7 @@ export default {
       }
     },
   },
-  components: { Terms },
+  components: { Terms, ToggleMode },
 };
 </script>
 
