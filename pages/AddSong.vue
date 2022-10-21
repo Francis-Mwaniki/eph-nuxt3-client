@@ -2,7 +2,7 @@
   <div class="dark:bg-slate-900">
     <section
       id="login"
-      class="p-4 flex flex-col justify-center min-h-screen max-w-md md:max-w-7xl mx-auto"
+      class="p-4 flex flex-col justify-center min-h-screen max-w-md mx-auto"
     >
       <div class="flex justify-center items-center mx-auto flex-row">
         <nuxt-link
