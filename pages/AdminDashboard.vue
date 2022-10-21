@@ -10,7 +10,7 @@
     v-else
   >
     <div>
-      <div class="bg-slate-700">
+      <div class="bg-slate-800">
         <div class="container mx-auto px-4">
           <div class="flex items-center md:justify-between py-4">
             <div class="w-1/4 md:hidden">
@@ -24,9 +24,7 @@
                 />
               </svg>
             </div>
-            <div class="w-1/2 md:w-auto text-center text-white text-2xl font-medium">
-              {{ id }}
-            </div>
+
             <div class="w-1/4 md:w-auto md:flex text-right">
               <div>
                 <img
@@ -55,7 +53,7 @@
           </div>
         </div>
       </div>
-      <div class="hidden bg-blue-dark md:block bg-slate-600 md:border-b">
+      <div class="hidden bg-blue-dark md:block bg-slate-800 md:border-b">
         <div class="container mx-auto px-4">
           <div class="md:flex">
             <div class="flex -mb-px mr-8">
@@ -95,22 +93,68 @@
               </nuxt-link>
             </div>
             <div class="flex -mb-px mr-8">
-              <nuxt-link
-                to="/AdminLogin"
-                class="no-underline text-white opacity-50 md:text-white md:opacity-100 flex items-center py-4 border-b border-transparent hover:opacity-100 md:hover:border-grey-dark"
-              >
-                <svg
-                  class="h-6 w-6 fill-current mr-2"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
+              <div class="relative inline-block text-left pt-2">
+                <div>
+                  <button
+                    @click="this.closeAccount = !this.closeAccount"
+                    type="button"
+                    class="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100"
+                    id="menu-button"
+                    aria-expanded="true"
+                    aria-haspopup="true"
+                  >
+                    Accounts
+                    <!-- Heroicon name: mini/chevron-down -->
+                    <svg
+                      class="-mr-1 ml-2 h-5 w-5"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div
+                  v-show="closeAccount"
+                  class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="menu-button"
+                  tabindex="-1"
                 >
-                  <path
-                    d="M18 8H5.5v-.5l11-.88v.88H18V6c0-1.1-.891-1.872-1.979-1.717L5.98 5.717C4.891 5.873 4 6.9 4 8v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2zm-1.5 7.006a1.5 1.5 0 1 1 .001-3.001 1.5 1.5 0 0 1-.001 3.001z"
-                    fill-rule="nonzero"
-                  />
-                </svg>
-                Account
-              </nuxt-link>
+                  <div class="py-1" role="none">
+                    <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                    <nuxt-link
+                      to="/AdminRegister"
+                      href="#"
+                      class="text-gray-700 block px-4 py-2 text-sm"
+                      role="menuitem"
+                      tabindex="-1"
+                      id="menu-item-0"
+                      >Add Account</nuxt-link
+                    >
+
+                    <form method="POST" action="#" role="none">
+                      <button
+                        @click="logout"
+                        type="submit"
+                        class="text-gray-700 block w-full px-4 py-2 text-left text-sm"
+                        role="menuitem"
+                        tabindex="-1"
+                        id="menu-item-3"
+                      >
+                        Sign out
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="flex -mb-px mr-8">
               <a
@@ -127,12 +171,12 @@
                     fill-rule="nonzero"
                   />
                 </svg>
-                Tools
+                Add Song
               </a>
             </div>
             <div class="flex -mb-px">
-              <a
-                href="#"
+              <nuxt-link
+                to="/Setting"
                 class="no-underline text-white opacity-50 md:text-white md:opacity-100 flex items-center py-4 border-b border-transparent hover:opacity-100 md:hover:border-grey-dark"
               >
                 <svg
@@ -146,7 +190,7 @@
                   />
                 </svg>
                 Settings
-              </a>
+              </nuxt-link>
             </div>
           </div>
         </div>
@@ -154,7 +198,7 @@
     </div>
     <div class="flex-grow container mx-auto sm:px-4 pt-6 pb-8">
       <div
-        class="bg-slate-700 border-t border-b sm:border-l sm:border-r sm:rounded shadow mb-6"
+        class="bg-slate-800 border-t border-b sm:border-l sm:border-r sm:rounded shadow mb-6"
       >
         <div class="border-b px-6">
           <div class="flex justify-between -mb-px">
@@ -222,15 +266,14 @@
         <div class="flex items-center px-6 lg:hidden">
           <div class="flex-grow flex-no-shrink py-6">
             <div class="text-white mb-2">
-              <span class="text-3xl align-top text-white">CA$</span>
-              <span class="text-5xl text-white">21,404</span>
-              <span class="text-3xl align-top text-white">.74</span>
+              <span class="text-5xl text-white">Users</span>
+              <span class="text-3xl align-top text-white">50</span>
             </div>
             <div class="text-green-light text-sm text-white">&uarr; 50000</div>
           </div>
           <div class="flex-shrink w-32 inline-block relative">
             <select
-              class="block appearance-none w-full text-white bg-slate-700 border border-grey-light px-4 py-2 pr-8 rounded"
+              class="block appearance-none w-full text-white bg-slate-800 border border-grey-light px-4 py-2 pr-8 rounded"
             >
               <option>Ksh</option>
               <option>$</option>
@@ -255,9 +298,10 @@
           <div class="w-1/3 text-center py-8">
             <div class="border-r">
               <div class="text-whiteer mb-2">
-                <span class="text-3xl align-top text-white">CA$</span>
-                <span class="text-5xl text-white">21,404</span>
-                <span class="text-3xl align-top">.74</span>
+                <span class="text-5xl text-white">Users</span>
+                <span class="text-xl align-top text-white rounded-full bg-blue-600 p-1"
+                  >74</span
+                >
               </div>
               <div class="text-sm uppercase text-grey tracking-wide text-white">
                 Transaction
@@ -267,28 +311,26 @@
           <div class="w-1/3 text-center py-8">
             <div class="border-r">
               <div class="text-whiteer mb-2">
-                <span class="text-3xl align-top"
-                  ><span class="text-green align-top text-white">+</span>CA$</span
+                <span class="text-5xl text-white">You</span>
+                <span class="text-xl align-top text-white rounded-full bg-blue-600 p-1"
+                  >74</span
                 >
-                <span class="text-5xl text-white">12,998</span>
-                <span class="text-3xl align-top text-white">.48</span>
               </div>
               <div class="text-sm uppercase text-grey tracking-wide text-white">
-                Since last month (CAD)
+                Track
               </div>
             </div>
           </div>
           <div class="w-1/3 text-center py-8">
             <div>
               <div class="text-whiteer mb-2">
-                <span class="text-3xl align-top"
-                  ><span class="text-green align-top text-white">+</span></span
+                <span class="text-5xl text-white">Track</span>
+                <span class="text-xl align-top text-white rounded-full bg-blue-600 p-1"
+                  >74</span
                 >
-                <span class="text-5xl text-white">154.47</span>
-                <span class="text-3xl align-top text-white">%</span>
               </div>
               <div class="text-sm uppercase text-grey tracking-wide text-white">
-                Since last month (%)
+                percentage(%)
               </div>
             </div>
           </div>
@@ -297,7 +339,7 @@
       <div class="flex flex-wrap -mx-4">
         <div class="w-full mb-6 lg:mb-0 lg:w-1/2 px-4 flex flex-col">
           <div
-            class="flex-grow flex flex-col bg-slate-700 border-t border-b sm:rounded sm:border shadow overflow-hidden"
+            class="flex-grow flex flex-col bg-slate-800 border-t border-b sm:rounded sm:border shadow overflow-hidden"
           >
             <div class="border-b">
               <div class="flex justify-between px-6 -mb-px">
@@ -307,20 +349,18 @@
                     type="button"
                     class="appearance-none py-4 border-b border-blue-dark mr-3 text-white"
                   >
-                    List
+                    CODE
                   </button>
                   <button
                     type="button"
                     class="appearance-none py-4 text-white border-b border-transparent hover:border-grey-dark"
                   >
-                    Chart
+                    Amount
                   </button>
                 </div>
               </div>
             </div>
-            <div
-              class="flex-grow flex px-6 py-6 text-whiteer items-center border-b -mx-4"
-            >
+            <div class="flex-grow flex px-6 py-6 text-white items-center border-b -mx-4">
               <div class="w-2/5 xl:w-1/4 px-4 flex items-center">
                 <div class="rounded-full bg-orange inline-flex mr-3">
                   <svg
@@ -346,13 +386,11 @@
                   <div class="text-right text-white">50%</div>
                 </div>
                 <div class="w-1/2 px-4">
-                  <div class="text-right text-grey text-white">CA$21.28</div>
+                  <div class="text-right text-grey text-white">ksh 21.28</div>
                 </div>
               </div>
             </div>
-            <div
-              class="flex-grow flex px-6 py-6 text-whiteer items-center border-b -mx-4"
-            >
+            <div class="flex-grow flex px-6 py-6 text-white items-center border-b -mx-4">
               <div class="w-2/5 xl:w-1/4 px-4 flex items-center">
                 <div class="rounded-full bg-grey inline-flex mr-3">
                   <svg
@@ -378,13 +416,11 @@
                   <div class="text-right text-white">40%</div>
                 </div>
                 <div class="w-1/2 px-4">
-                  <div class="text-right text-grey text-white">CA$0.00</div>
+                  <div class="text-right text-grey text-white">Ksh 90.00</div>
                 </div>
               </div>
             </div>
-            <div
-              class="flex-grow flex px-6 py-6 text-whiteer items-center border-b -mx-4"
-            >
+            <div class="flex-grow flex px-6 py-6 text-white items-center border-b -mx-4">
               <div class="w-2/5 xl:w-1/4 px-4 flex items-center">
                 <div class="rounded-full bg-indigo inline-flex mr-3">
                   <svg
@@ -410,24 +446,22 @@
                   <div class="text-right text-white">70%</div>
                 </div>
                 <div class="w-1/2 px-4">
-                  <div class="text-right text-grey text-white">CA$0.00</div>
+                  <div class="text-right text-grey text-white">Ksh 1990.00</div>
                 </div>
               </div>
             </div>
             <div class="px-6 py-4">
               <div class="text-center text-grey text-white">
-                Total Balance &asymp; CA$21.28
+                Total Balance &asymp; Ksh21.28
               </div>
             </div>
           </div>
         </div>
         <div class="w-full lg:w-1/2 px-4">
-          <div class="bg-slate-700 border-t border-b sm:rounded sm:border shadow">
+          <div class="bg-slate-800 border-t border-b sm:rounded sm:border shadow">
             <div class="border-b">
               <div class="flex justify-between px-6 -mb-px">
-                <h3 class="text-white py-4 font-normal text-lg text-white">
-                  Recent Activity
-                </h3>
+                <h3 class="text-white py-4 font-normal text-lg">Recent Activity</h3>
               </div>
             </div>
             <div>
@@ -477,8 +511,9 @@ export default {
   setup() {
     let auth = ref(false);
     let msg = ref("");
+    let closeAccount = ref(false);
     let id = ref("");
-    return { auth, msg, id };
+    return { auth, msg, id, closeAccount };
   },
   async mounted() {
     try {
@@ -520,12 +555,12 @@ export default {
       if (res.ok) {
         let data = await res.json();
         console.log(data);
-        this.$router.push("/login");
+        this.$router.push("/AdminLogin");
         location.reload();
       } else {
         let data = await res.json();
         console.log(data);
-        this.$router.push("/register");
+        this.$router.push("/AdminRegister");
         location.reload();
       }
     },
