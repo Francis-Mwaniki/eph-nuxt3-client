@@ -4,7 +4,10 @@
     <div class="container mx-auto h-full flex flex-1 justify-center items-center">
       <div class="w-full max-w-lg">
         <div class="leading-loose">
-          <form class="max-w-xl m-4 p-10 bg-slate-800 rounded shadow-xl">
+          <form
+            class="max-w-xl m-4 p-10 bg-slate-800 rounded shadow-xl"
+            @submit.prevent="submit"
+          >
             <p class="text-gray-300 text-center text-lg font-bold">Register as Admin</p>
             <div class="">
               <label class="block text-sm text-gray-200" for="username">Username</label>
@@ -12,6 +15,7 @@
                 class="w-full px-5 py-1 dark:text-gray-300 text-gray-200 rounded"
                 id="username"
                 name="username"
+                v-model="name"
                 type="text"
                 required=""
                 placeholder="User Name"
@@ -25,6 +29,7 @@
                 id="email"
                 name="email"
                 type="email"
+                v-model="email"
                 required=""
                 placeholder="email.."
                 aria-label="email"
@@ -36,6 +41,7 @@
                 class="w-full px-5 py-1 text-gray-200 dark:text-gray-300 bg-gray-200 rounded"
                 id="password"
                 name="password"
+                v-model="password"
                 type="text"
                 required=""
                 placeholder="*******"
@@ -71,7 +77,41 @@
 
 <script>
 import VerticalNav from "../components/verticalNav.vue";
-export default { components: { VerticalNav } };
+export default {
+  components: { VerticalNav },
+  data() {
+    return {
+      name: "",
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    async submit() {
+      let url = "http://localhost:7000/AdminRegister";
+      /* let url = "/api/v1/register"; */
+      let res = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          name: this.name,
+          email: this.email,
+          password: this.password,
+        }),
+      });
+      if (res.ok) {
+        let data = await res.json();
+        alert(data.message);
+        await this.$router.push("/AdminLogin");
+      } else {
+        let data = await res.json();
+        alert(data.message);
+      }
+    },
+  },
+};
 </script>
 
 <style>

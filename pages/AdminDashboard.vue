@@ -1,5 +1,20 @@
 <template>
-  <div class="font-sans bg-grey-lighter flex flex-col min-h-screen w-full bg-slate-900">
+  <div
+    class="flex justify-center flex-col gap-y-3 items-center mx-auto p-3 text-slate-900 text-3xl"
+    v-if="!auth"
+  >
+    <button class="bg-indigo-600 text-white px-7 py-2 rounded-lg ring-2 ring-red-500">
+      <nuxt-link to="/AdminLogin">Login As an Admin</nuxt-link>
+    </button>
+    <p class=" ">{{ msg }}</p>
+    <button class="bg-indigo-600 text-white px-7 py-2 rounded-lg ring-2 ring-red-500">
+      <nuxt-link to="/">(:Home</nuxt-link>
+    </button>
+  </div>
+  <div
+    class="font-sans bg-grey-lighter flex flex-col min-h-screen w-full bg-slate-900"
+    v-else
+  >
     <div>
       <div class="bg-slate-700">
         <div class="container mx-auto px-4">
@@ -16,7 +31,7 @@
               </svg>
             </div>
             <div class="w-1/2 md:w-auto text-center text-white text-2xl font-medium">
-              cointoad
+              {{ id }}
             </div>
             <div class="w-1/4 md:w-auto md:flex text-right">
               <div>
@@ -27,7 +42,9 @@
                 />
               </div>
               <div class="hidden md:block md:flex md:items-center ml-2">
-                <span class="text-white text-sm mr-1">Ephesus sardis </span>
+                <span class="text-white text-sm mr-1">{{
+                  auth ? msg : "not signed in"
+                }}</span>
                 <div>
                   <svg
                     class="fill-current text-white h-4 w-4 block opacity-50"
@@ -459,7 +476,67 @@
 </template>
 
 <script>
-export default {};
+import { ref } from "vue";
+
+export default {
+  setup() {
+    let auth = ref(false);
+    let msg = ref("");
+    let id = ref("");
+    return { auth, msg, id };
+  },
+  async mounted() {
+    try {
+      let url = "http://localhost:7000/Admin";
+      /* let url = "/api/v1/user"; */
+      const response = await fetch(url, {
+        credentials: "include",
+        headers: {
+          "Content-type": "application/json",
+        },
+      });
+      if (response.ok) {
+        const content = await response.json();
+        this.auth = true;
+        this.msg = content.message.name;
+        this.id = content.message.email;
+        console.log(content);
+      } else {
+        const content = await response.json();
+        this.msg = content.message;
+        this.auth = false;
+
+        console.log(content);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  methods: {
+    async logout() {
+      let url = "http://localhost:7000/AdminLogout";
+      /* let url = "/api/v1/logout"; */
+      let res = await fetch(url, {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-type": "application/json",
+        },
+      });
+      if (res.ok) {
+        let data = await res.json();
+        console.log(data);
+        this.$router.push("/login");
+        location.reload();
+      } else {
+        let data = await res.json();
+        console.log(data);
+        this.$router.push("/register");
+        location.reload();
+      }
+    },
+  },
+};
 </script>
 
 <style></style>
