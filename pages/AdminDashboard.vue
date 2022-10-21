@@ -163,8 +163,8 @@
               </div>
             </div>
             <div class="flex -mb-px mr-8">
-              <a
-                href="#"
+              <nuxt-link
+                to="/AddSong"
                 class="no-underline text-white opacity-50 md:text-white md:opacity-100 flex items-center py-4 border-b border-transparent hover:opacity-100 md:hover:border-grey-dark"
               >
                 <svg
@@ -178,7 +178,7 @@
                   />
                 </svg>
                 Add Song
-              </a>
+              </nuxt-link>
             </div>
             <div class="flex -mb-px">
               <nuxt-link

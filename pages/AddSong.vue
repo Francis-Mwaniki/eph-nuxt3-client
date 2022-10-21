@@ -6,19 +6,7 @@
     >
       <div class="p-6 bg-sky-100 rounded">
         <div class="flex items-center justify-center font-black m-3 mb-12">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-10 w-10 mr-3 text-red-600 animate-pulse"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-              clip-rule="evenodd"
-            />
-          </svg>
-          <h1 class="tracking-wide text-3xl text-gray-900">Buy Me a Laptop</h1>
+          <h1 class="tracking-wide text-3xl text-gray-900">Add Song</h1>
         </div>
         <form
           id="login_form"
@@ -41,14 +29,10 @@
                   clip-rule="evenodd"
                 />
               </svg>
-              <span class="font-bold text-gray-900">$5 / Core</span>
+              <span class="font-bold text-gray-900"></span>
             </div>
             <div class="flex">
-              <button
-                type="button"
-                onclick="minus()"
-                class="bg-yellow-600 p-1.5 font-bold rounded"
-              >
+              <button type="button" class="bg-yellow-600 p-1.5 font-bold rounded">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-5 w-5"
@@ -70,11 +54,7 @@
                 class="max-w-[100px] font-bold font-mono py-1.5 px-2 mx-1.5 block border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 focus:invalid:border-red-500 focus:invalid:ring-red-500"
               />
 
-              <button
-                type="button"
-                onclick="plus()"
-                class="bg-green-600 p-1.5 font-bold rounded"
-              >
+              <button type="button" class="bg-green-600 p-1.5 font-bold rounded">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-5 w-5"
@@ -90,25 +70,25 @@
               </button>
             </div>
           </div>
-          <label class="text-sm font-medium">From</label>
+          <label class="text-sm font-medium">Song Title</label>
           <input
             class="mb-3 px-2 py-1.5 mb-3 mt-1 block w-full px-2 py-1.5 border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 focus:invalid:border-red-500 focus:invalid:ring-red-500"
             type="text"
             name="username"
-            placeholder="wahyusa"
+            placeholder="title..."
           />
-          <label class="text-sm font-medium">Messages (optional)</label>
+          <label class="text-sm font-medium">Song Content</label>
           <textarea
             class="mb-3 mt-1 block w-full px-2 py-1.5 border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 focus:invalid:border-red-500 focus:invalid:ring-red-500"
             name="messages"
-            placeholder="Write something"
+            placeholder="content..."
           ></textarea>
           <button
             class="px-4 py-1.5 rounded-md shadow-lg bg-gradient-to-r from-pink-600 to-red-600 font-medium text-gray-100 block transition duration-300"
             type="submit"
           >
-            <span id="login_process_state" class="hidden">Sending :)</span>
-            <span id="login_default_state">Donate<span id="subtotal"></span></span>
+            <span id="login_process_state" class="hidden">Processing</span>
+            <span id="login_default_state">Add<span id="subtotal"></span></span>
           </button>
         </form>
       </div>
