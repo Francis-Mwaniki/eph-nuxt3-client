@@ -63,7 +63,7 @@
                   ><span
                     class="cursor-pointer bg-indigo-600 text-white px-7 py-2 rounded-lg ring-2 ring-red-500"
                   >
-                    <nuxt-link to="/">(:Home</nuxt-link>
+                    <nuxt-link to="/">Home</nuxt-link>
                   </span>
                 </span>
               </div>

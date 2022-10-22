@@ -254,11 +254,12 @@
                   </nuxt-link>
                 </div>
                 <div class="mt-3 sm:mt-0 sm:ml-3">
-                  <a
-                    href="#"
+                  <button
                     class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-100 dark:bg-slate-400 px-8 py-3 text-base font-medium text-indigo-700 hover:bg-indigo-200 md:py-4 md:px-10 md:text-lg"
-                    >Donate</a
+                    @click="Donate"
                   >
+                    Donate
+                  </button>
                 </div>
               </div>
             </div>
@@ -273,6 +274,7 @@
         />
       </div>
     </div>
+
     <SharedHero />
     <!--     <Dropdown1 /> -->
   </main>
@@ -281,16 +283,25 @@
 <script>
 /* import Dropdown1 from "./Dropdown.vue"; */
 import SharedHeroVue from "./SharedHero.vue";
+
 export default {
   components: { SharedHeroVue },
+  mounted() {
+    this.donate = true;
+  },
   data() {
     return {
       mode: false,
+      donate: false,
+      give: "donate",
     };
   },
   methods: {
     toggleMode() {
       this.mode = !this.mode;
+    },
+    Donate() {
+      navigateTo("/Popup");
     },
   },
 };

@@ -13,17 +13,46 @@
       <div class="dark:bg-slate-800 bg-slate-200">
         <div class="container mx-auto px-4">
           <div class="flex items-center md:justify-between py-4">
-            <div class="w-1/4 md:hidden">
+            <!-- Mobile menu -->
+            <button
+              type="button"
+              class="inline-flex md:hidden items-center justify-center rounded-md bg-white dark:border-indigo-500 dark:bg-slate-300 p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+              @click="toggleMode"
+            >
+              <span class="sr-only">Close main menu</span>
+              <!-- Menu icon -->
               <svg
-                class="fill-current dark:text-white text-black h-8 w-8"
+                v-if="!mode"
                 xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 fill-black"
                 viewBox="0 0 20 20"
+                fill="currentColor"
               >
                 <path
-                  d="M16.4 9H3.6c-.552 0-.6.447-.6 1 0 .553.048 1 .6 1h12.8c.552 0 .6-.447.6-1 0-.553-.048-1-.6-1zm0 4H3.6c-.552 0-.6.447-.6 1 0 .553.048 1 .6 1h12.8c.552 0 .6-.447.6-1 0-.553-.048-1-.6-1zM3.6 7h12.8c.552 0 .6-.447.6-1 0-.553-.048-1-.6-1H3.6c-.552 0-.6.447-.6 1 0 .553.048 1 .6 1z"
+                  fill-rule="evenodd"
+                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                  clip-rule="evenodd"
                 />
               </svg>
-            </div>
+
+              <svg
+                v-else
+                class="h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <!-- End of mobile close -->
             <div>
               <ToggleMode />
             </div>
@@ -57,10 +86,153 @@
           </div>
         </div>
       </div>
+      <!-- MOBILE MENU -->
+      <div class="block md:hidden dark:bg-slate-800 bg-slate-200 pl-32" v-show="mode">
+        <div class="flex">
+          <a
+            href="#"
+            class="no-underline dark:text-white text-black md:text-white flex items-center py-4 border-b border-blue-dark"
+          >
+            <svg
+              class="h-6 w-6 fill-current mr-2"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3.889 3h6.222a.9.9 0 0 1 .889.91v8.18a.9.9 0 0 1-.889.91H3.89A.9.9 0 0 1 3 12.09V3.91A.9.9 0 0 1 3.889 3zM3.889 15h6.222c.491 0 .889.384.889.857v4.286c0 .473-.398.857-.889.857H3.89C3.398 21 3 20.616 3 20.143v-4.286c0-.473.398-.857.889-.857zM13.889 11h6.222a.9.9 0 0 1 .889.91v8.18a.9.9 0 0 1-.889.91H13.89a.9.9 0 0 1-.889-.91v-8.18a.9.9 0 0 1 .889-.91zM13.889 3h6.222c.491 0 .889.384.889.857v4.286c0 .473-.398.857-.889.857H13.89C13.398 9 13 8.616 13 8.143V3.857c0-.473.398-.857.889-.857z"
+              />
+            </svg>
+            Dashboard
+          </a>
+        </div>
+        <div class="flex">
+          <nuxt-link
+            to="/"
+            class="no-underline dark:text-white text-black md:text-white md:opacity-100 flex items-center py-4 border-b border-transparent hover:opacity-100 md:hover:border-grey-dark"
+          >
+            <svg
+              class="h-6 w-6 fill-current mr-2"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M8 7h10V5l4 3.5-4 3.5v-2H8V7zm-6 8.5L6 12v2h10v3H6v2l-4-3.5z"
+                fill-rule="nonzero"
+              />
+            </svg>
+            Home
+          </nuxt-link>
+        </div>
+        <div class="flex">
+          <div class="relative inline-block text-left pt-2">
+            <div>
+              <button
+                @click="this.closeAccount = !this.closeAccount"
+                type="button"
+                class="inline-flex w-full justify-center rounded-md border dark:border-gray-300 border-indigo-700 bg-slate-800 px-4 py-2 text-sm bg-transparent font-medium dark:text-gray-200 text-indigo-600 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100"
+                id="menu-button"
+                aria-expanded="true"
+                aria-haspopup="true"
+              >
+                Accounts
+                <!-- Heroicon name: mini/chevron-down -->
+                <svg
+                  class="-mr-1 ml-2 h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              v-show="closeAccount"
+              class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white dark:bg-slate-700 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="menu-button"
+              tabindex="-1"
+            >
+              <div
+                class="py-1 dark:bg-slate-800 bg-slate-300 border-white rounded-md"
+                role="none"
+              >
+                <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                <nuxt-link
+                  to="/AdminRegister"
+                  href="#"
+                  class="text-gray-700 dark:text-gray-400 block px-4 py-2 text-sm"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="menu-item-0"
+                  >Add Account</nuxt-link
+                >
+
+                <form method="POST" action="#" role="none">
+                  <button
+                    @click="logout"
+                    type="submit"
+                    class="text-gray-700 dark:text-gray-400 block w-full px-4 py-2 text-left text-sm"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="menu-item-3"
+                  >
+                    Sign out
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex">
+          <nuxt-link
+            to="/AddSong"
+            class="no-underline dark:text-white text-black md:text-white md:opacity-100 flex items-center py-4 border-b border-transparent hover:opacity-100 md:hover:border-grey-dark"
+          >
+            <svg
+              class="h-6 w-6 fill-current mr-2"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M11 12h2v2h9s-.149-4.459-.2-5.854C21.75 6.82 21.275 6 19.8 6h-3.208l-1.197-2.256C15.064 3.121 14.951 3 14.216 3H9.783c-.735 0-.847.121-1.179.744-.165.311-.7 1.318-1.196 2.256H4.199c-1.476 0-1.945.82-2 2.146C2.145 9.473 2 14 2 14h9v-2zM9.649 4.916c.23-.432.308-.516.817-.516h3.067c.509 0 .588.084.816.516L14.924 6h-5.85l.575-1.084zM13 17h-2v-2H2.5s.124 1.797.199 3.322c.031.633.218 1.678 1.8 1.678H19.5c1.582 0 1.765-1.047 1.8-1.678.087-1.568.2-3.322.2-3.322H13v2z"
+                fill-rule="nonzero"
+              />
+            </svg>
+            Add Song
+          </nuxt-link>
+        </div>
+        <div class="flex">
+          <nuxt-link
+            to="/Setting"
+            class="no-underline dark:text-white text-black md:opacity-100 flex items-center py-4 border-b border-transparent hover:opacity-100 md:hover:border-grey-dark"
+          >
+            <svg
+              class="h-6 w-6 fill-current mr-2"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M18.783 12c0-1.049.646-1.875 1.617-2.443a8.932 8.932 0 0 0-.692-1.672c-1.089.285-1.97-.141-2.711-.883-.741-.74-.968-1.621-.683-2.711a8.732 8.732 0 0 0-1.672-.691c-.568.97-1.595 1.615-2.642 1.615-1.048 0-2.074-.645-2.643-1.615-.58.172-1.14.403-1.671.691.285 1.09.059 1.971-.684 2.711-.74.742-1.621 1.168-2.711.883A8.797 8.797 0 0 0 3.6 9.557c.97.568 1.615 1.394 1.615 2.443 0 1.047-.645 2.074-1.615 2.643.173.58.404 1.14.691 1.672 1.09-.285 1.971-.059 2.711.682.741.742.969 1.623.684 2.711.532.288 1.092.52 1.672.693.568-.973 1.595-1.617 2.643-1.617 1.047 0 2.074.645 2.643 1.617a8.963 8.963 0 0 0 1.672-.693c-.285-1.088-.059-1.969.683-2.711.741-.74 1.622-1.166 2.711-.883.287-.532.52-1.092.692-1.672-.973-.569-1.619-1.395-1.619-2.442zM12 15.652a3.653 3.653 0 1 1 0-7.306 3.653 3.653 0 0 1 0 7.306z"
+                fill-rule="nonzero"
+              />
+            </svg>
+            Settings
+          </nuxt-link>
+        </div>
+      </div>
       <div
         class="hidden bg-blue-dark md:block dark:bg-slate-800 bg-indigo-600 md:border-b"
       >
         <div class="container mx-auto px-4">
+          <!-- MD MENU -->
           <div class="md:flex">
             <div class="flex -mb-px mr-8">
               <a
@@ -134,7 +306,10 @@
                   aria-labelledby="menu-button"
                   tabindex="-1"
                 >
-                  <div class="py-1 dark:bg-slate-800 bg-slate-300" role="none">
+                  <div
+                    class="py-1 dark:bg-slate-800 bg-slate-300 border border-white rounded-md"
+                    role="none"
+                  >
                     <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
                     <nuxt-link
                       to="/AdminRegister"
@@ -208,9 +383,6 @@
       >
         <div class="border-b px-6">
           <div class="flex justify-between -mb-px">
-            <div class="lg:hidden dark:text-white text-gray-700 py-4 text-lg">
-              Price Charts
-            </div>
             <div class="hidden lg:flex">
               <button
                 type="button"
@@ -231,54 +403,16 @@
                 Ksh 5000
               </button>
             </div>
-            <div class="flex text-sm">
-              <button
-                type="button"
-                class="appearance-none py-4 dark:text-white text-gray-700 border-b border-transparent hover:border-grey-dark mr-3"
-              >
-                1M
-              </button>
-              <button
-                type="button"
-                class="appearance-none py-4 dark:text-white text-gray-700 border-b border-transparent hover:border-grey-dark mr-3"
-              >
-                1D
-              </button>
-              <button
-                type="button"
-                class="appearance-none py-4 dark:text-white text-gray-700 border-b border-transparent hover:border-grey-dark mr-3"
-              >
-                1W
-              </button>
-              <button
-                type="button"
-                class="appearance-none py-4 dark:text-white text-gray-700 border-b border-blue-dark mr-3"
-              >
-                1M
-              </button>
-              <button
-                type="button"
-                class="appearance-none py-4 dark:text-white text-gray-700 border-b border-transparent hover:border-grey-dark mr-3"
-              >
-                1Y
-              </button>
-              <button
-                type="button"
-                class="appearance-none py-4 dark:text-white text-gray-700 border-b border-transparent hover:border-grey-dark"
-              >
-                ALL
-              </button>
-            </div>
           </div>
         </div>
         <div class="flex items-center px-6 lg:hidden">
           <div class="flex-grow flex-no-shrink py-6">
             <div class="dark:text-white text-gray-700 mb-2">
               <span class="text-5xl dark:text-white text-gray-700">Users</span>
-              <span class="text-3xl align-top dark:text-white text-gray-700">50</span>
-            </div>
-            <div class="text-green-light text-sm dark:text-white text-gray-700">
-              &uarr; 50000
+              <span
+                class="text-3xl align-top dark:text-white text-gray-700 bg-indigo-700 rounded-full p-1"
+                >50</span
+              >
             </div>
           </div>
           <div class="flex-shrink w-32 inline-block relative">
@@ -307,7 +441,7 @@
         <div class="hidden lg:flex">
           <div class="w-1/3 text-center py-8">
             <div class="border-r">
-              <div class="text-whiteer mb-2">
+              <div class="text-white mb-2">
                 <span class="text-5xl dark:text-white text-gray-700">Users</span>
                 <span class="text-xl align-top text-white rounded-full bg-blue-600 p-1"
                   >74</span
@@ -551,10 +685,11 @@ import ToggleMode from "../components/toggleMode.vue";
 export default {
   setup() {
     let auth = ref(false);
+    let mode = ref(false);
     let msg = ref("");
     let closeAccount = ref(false);
     let id = ref("");
-    return { auth, msg, id, closeAccount };
+    return { auth, msg, id, closeAccount, mode };
   },
   async mounted() {
     try {
@@ -604,6 +739,9 @@ export default {
         this.$router.push("/AdminRegister");
         location.reload();
       }
+    },
+    toggleMode() {
+      this.mode = !this.mode;
     },
   },
   components: { Terms, ToggleMode },
