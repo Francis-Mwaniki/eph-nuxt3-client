@@ -6,7 +6,7 @@
     <h1
       class="relative z-20 md:text-3xl text-sm font-mono font-extrabold text-orange-600 dark:text-slate-300 flex justify-center items-center mx-auto p-2 pt-3"
     >
-      Messianic Gospel ArtisT
+      Gospel Artist
     </h1>
 
     <Artist2 />

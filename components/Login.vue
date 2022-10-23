@@ -2,7 +2,9 @@
   <div
     class="flex min-h-full items-center justify-center py-2 px-4 sm:px-6 lg:px-8 dark:bg-slate-900 md:pt-1 pt-2"
   >
-    <div class="w-full max-w-md space-y-8 dark:bg-slate-700 dark:p-4 dark:rounded-lg">
+    <div
+      class="w-full max-w-md space-y-8 dark:bg-slate-700 dark:p-4 dark:rounded-lg border border-gray-300 p-1 rounded-lg"
+    >
       <div>
         <img
           class="mx-auto h-12 w-auto rounded-full"
@@ -31,7 +33,7 @@
               name="email"
               type="email"
               v-model="user.email"
-              class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm dark:bg-gray-300"
+              class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm dark:bg-gray-100"
               placeholder="Enter email.."
             />
             <ErrorMessage
@@ -45,7 +47,7 @@
               name="password"
               type="password"
               v-model="user.password"
-              class="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm dark:bg-gray-300"
+              class="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm dark:bg-gray-100"
               placeholder="password"
             />
             <ErrorMessage

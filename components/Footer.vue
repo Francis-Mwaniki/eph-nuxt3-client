@@ -143,7 +143,7 @@
           >
             <div class="md:ml-auto md:mb-6">
               <p class="">
-                <strong>Sign up for our newsletter</strong>
+                <strong>Send Us An Email</strong>
               </p>
             </div>
 
@@ -195,7 +195,9 @@
 
           <ul class="list-none mb-0">
             <li>
-              <a href="#!" class="text-white">Contact us</a>
+              <a href="mailto:ephesussardis001@gmail.com" class="text-white"
+                >Contact us</a
+              >
             </li>
           </ul>
         </div>
@@ -207,7 +209,7 @@
 
           <ul class="list-none mb-0">
             <li>
-              <a href="#!" class="text-white">Songs</a>
+              <nuxt-link to="/Songs" class="text-white">Songs</nuxt-link>
             </li>
           </ul>
         </div>
