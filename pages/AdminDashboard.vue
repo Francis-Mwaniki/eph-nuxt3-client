@@ -622,8 +622,8 @@ export default {
   },
   async mounted() {
     try {
-      let url = "http://localhost:7000/Admin";
-      /* let url = "/api/v1/user"; */
+      /*  let url = "http://localhost:7000/Admin"; */
+      let url = "/api/user/Admin";
       const response = await fetch(url, {
         credentials: "include",
         headers: {
@@ -648,8 +648,8 @@ export default {
   },
   methods: {
     async logout() {
-      let url = "http://localhost:7000/AdminLogout";
-      /* let url = "/api/v1/logout"; */
+      /* let url = "http://localhost:7000/AdminLogout"; */
+      let url = "/api/user/AdminLogout";
       let res = await fetch(url, {
         method: "POST",
         credentials: "include",

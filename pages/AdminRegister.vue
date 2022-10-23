@@ -98,8 +98,8 @@ export default {
   },
   methods: {
     async submit() {
-      let url = "http://localhost:7000/AdminRegister";
-      /* let url = "/api/v1/register"; */
+      /* let url = "http://localhost:7000/AdminRegister"; */
+      let url = "/api/user/AdminRegister";
       let res = await fetch(url, {
         method: "POST",
         headers: {
@@ -121,8 +121,8 @@ export default {
       }
     },
     async logout() {
-      let url = "http://localhost:7000/AdminLogout";
-      /* let url = "/api/v1/logout"; */
+      /* let url = "http://localhost:7000/AdminLogout"; */
+      let url = "/api/user/AdminLogout";
       let res = await fetch(url, {
         method: "POST",
         credentials: "include",
@@ -145,8 +145,8 @@ export default {
   },
   async mounted() {
     try {
-      let url = "http://localhost:7000/Admin";
-      /* let url = "/api/v1/user"; */
+      /* let url = "http://localhost:7000/Admin"; */
+      let url = "/api/user/Admin";
       const response = await fetch(url, {
         credentials: "include",
         headers: {

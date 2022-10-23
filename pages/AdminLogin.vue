@@ -81,8 +81,8 @@ export default {
   },
   methods: {
     async submit() {
-      let url = "http://localhost:7000/AdminLogin";
-      /* let url = "/api/v1/login"; */
+      /* let url = "http://localhost:7000/AdminLogin"; */
+      let url = "/api/user/AdminLogin";
       let res = await fetch(url, {
         method: "POST",
         credentials: "include",

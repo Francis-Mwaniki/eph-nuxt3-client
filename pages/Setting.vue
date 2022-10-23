@@ -102,8 +102,8 @@ export default {
   },
   async mounted() {
     try {
-      let url = "http://localhost:7000/Admin";
-      /* let url = "/api/v1/user"; */
+      /* let url = "http://localhost:7000/Admin"; */
+      let url = "/api/user/Admin";
       const response = await fetch(url, {
         credentials: "include",
         headers: {
