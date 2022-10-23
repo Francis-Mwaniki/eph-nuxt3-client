@@ -610,6 +610,7 @@
 import { ref } from "vue";
 import Terms from "../components/Terms.vue";
 import ToggleMode from "../components/toggleMode.vue";
+import useToast from "../composables/useToast";
 
 export default {
   setup() {
@@ -659,13 +660,15 @@ export default {
       });
       if (res.ok) {
         let data = await res.json();
-        console.log(data);
-        this.$router.push("/AdminLogin");
+        useToast().success(data.message);
+        setTimeout(async () => {
+          await this.$router.push("/AdminLogin");
+        }, 6000);
         location.reload();
       } else {
         let data = await res.json();
-        console.log(data);
-        this.$router.push("/AdminRegister");
+        useToast().error(data.message);
+        await this.$router.push("/AdminRegister");
         location.reload();
       }
     },
@@ -676,5 +679,3 @@ export default {
   components: { Terms, ToggleMode },
 };
 </script>
-
-<style></style>

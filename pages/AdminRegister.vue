@@ -85,6 +85,7 @@
 
 <script>
 import VerticalNav from "../components/verticalNav.vue";
+import useToast from "../composables/useToast";
 export default {
   components: { VerticalNav },
   data() {
@@ -113,11 +114,11 @@ export default {
       });
       if (res.ok) {
         let data = await res.json();
-        alert(data.message);
+        useToast().success(data.message);
         await this.$router.push("/AdminLogin");
       } else {
         let data = await res.json();
-        alert(data.message);
+        useToast().error(data.message);
       }
     },
     async logout() {
@@ -132,13 +133,17 @@ export default {
       });
       if (res.ok) {
         let data = await res.json();
-        console.log(data);
-        this.$router.push("/AdminLogin");
+        useToast().success(data.message);
+
+        await this.$router.push("/AdminLogin");
+
         location.reload();
       } else {
         let data = await res.json();
         console.log(data);
-        this.$router.push("/AdminRegister");
+
+        await this.$router.push("/AdminRegister");
+
         location.reload();
       }
     },
