@@ -33,7 +33,7 @@ export default defineNuxtConfig({
           target: "http://localhost:7000/",
           ws: true,
         },
-        "/api/user/Admin": {
+        "/api/user/": {
           target: "http://localhost:7000/",
           ws: true,
         },

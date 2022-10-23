@@ -17,6 +17,9 @@ export const useLoginStore = defineStore("login-store", {
       if (res.ok) {
         const data = await res.json();
         useToast().success(data.message);
+        setTimeout(() => {
+          navigateTo("/Songs");
+        }, 5000);
       } else {
         const data = await res.json();
         useToast().error(data.message);

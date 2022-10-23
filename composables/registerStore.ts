@@ -18,7 +18,7 @@ export const useRegisterStore = defineStore("register-store", {
         const data = await res.json();
         useToast().success(data.message);
         setTimeout(() => {
-          navigateTo("/Songs");
+          navigateTo("/login");
         }, 8000);
       } else {
         const data = await res.json();

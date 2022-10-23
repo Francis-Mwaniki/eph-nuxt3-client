@@ -43,22 +43,22 @@
             <div class="flex justify-between items-center my-5 px-6">
               <a
                 href="#!"
-                class="dark:text-gray-500 text-gray-700 hover:text-gray-300 hover:bg-indigo-600 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
+                class="dark:text-gray-300 text-gray-700 hover:text-gray-300 hover:bg-indigo-600 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
                 >Love</a
               >
               <a
                 href="#!"
-                class="dark:text-gray-500 text-gray-700 hover:text-gray-300 hover:bg-indigo-600 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
+                class="dark:text-gray-300 text-gray-700 hover:text-gray-300 hover:bg-indigo-600 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
                 >Joy</a
               >
               <a
                 href="#!"
-                class="dark:text-gray-500 text-gray-700 hover:text-gray-300 hover:bg-indigo-600 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
+                class="dark:text-gray-300 text-gray-700 hover:text-gray-300 hover:bg-indigo-600 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
                 >Peace</a
               >
               <a
                 href="#!"
-                class="dark:text-gray-500 text-gray-700 hover:text-gray-300 hover:bg-indigo-600 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
+                class="dark:text-gray-300 text-gray-700 hover:text-gray-300 hover:bg-indigo-600 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
                 >Discipline</a
               >
             </div>
@@ -103,8 +103,8 @@ export default {
   async mounted() {
     try {
       /* let url = "http://localhost:7000/Admin"; */
-      let url = "/api/user/Admin";
-      const response = await fetch(url, {
+
+      const response = await fetch("/api/user/", {
         credentials: "include",
         headers: {
           "Content-type": "application/json",

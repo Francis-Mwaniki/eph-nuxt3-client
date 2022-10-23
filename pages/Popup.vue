@@ -40,7 +40,7 @@
       <span class="text-2xl font-medium text-white">Payment</span>
       <p class="text-center text-white">Mpesa No: 0741626493</p>
       <button id="modal-close" class="p-3 bg-[#4F46E5] rounded-lg w-full text-white">
-        Paypal
+        Be Blessed!!
       </button>
     </div>
   </div>

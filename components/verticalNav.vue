@@ -60,7 +60,7 @@
               ><!-- <font-awesome-icon
                 :icon="['fas', 'right-to-bracket']"
                 class="h-10 w-10 text-black dark:text-gray-300"
-              /> --><span class="dark:text-white">login</span></span
+              /> --><span class="dark:text-white font-mono">Login</span></span
             >
           </nuxt-link>
         </p>
@@ -74,7 +74,7 @@
                 :icon="['fas', 'tv']"
                 class="h-10 w-10 text-black dark:text-gray-300"
               /> -->
-              <span class="dark:text-white">video</span>
+              <span class="dark:text-white font-mono">Video</span>
             </span>
           </nuxt-link>
         </p>
@@ -88,7 +88,7 @@
                 :icon="['fas', 'lock']"
                 class="h-10 w-10 text-black dark:text-gray-300"
               /> -->
-              <span class="dark:text-white">Admin</span>
+              <span class="dark:text-white font-mono">Admin</span>
             </span>
           </nuxt-link>
         </p>
@@ -103,7 +103,7 @@
                 :icon="['fas', 'music']"
                 class="h-10 w-10 text-black dark:text-gray-300"
               /> -->
-              <span class="dark:text-white">music</span>
+              <span class="dark:text-white font-mono">Music</span>
             </span>
           </nuxt-link>
         </p>
@@ -117,7 +117,7 @@
                 :icon="['fas', 'house']"
                 class="h-10 w-10 text-black dark:text-gray-300"
               /> -->
-              <span class="dark:text-white">home</span>
+              <span class="dark:text-white font-mono">Home</span>
             </span>
           </nuxt-link>
         </p>

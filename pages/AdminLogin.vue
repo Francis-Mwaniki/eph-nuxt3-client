@@ -10,9 +10,9 @@
           >
             <p class="text-gray-200 text-center text-lg font-bold">Login As Admin</p>
             <div class="">
-              <label class="block text-sm text-gray-200" for="username">Username</label>
+              <label class="block text-sm text-gray-200" for="username">Email</label>
               <input
-                class="w-full px-5 py-1 text-gray-200 bg-gray-200 rounded"
+                class="w-full px-5 py-1 text-gray-800 dark:text-gray-800 bg-gray-200 rounded"
                 id="username"
                 name="username"
                 type="text"
@@ -25,11 +25,11 @@
             <div class="mt-2">
               <label class="block text-sm text-gray-200" for="password">Password</label>
               <input
-                class="w-full px-5 py-1 text-gray-200 bg-gray-200 rounded"
+                class="w-full px-5 py-1 text-gray-800 dark:text-gray-800 bg-gray-200 rounded"
                 id="password"
                 name="password"
                 v-model="password"
-                type="text"
+                type="password"
                 required=""
                 placeholder="*******"
                 aria-label="password"

@@ -623,8 +623,8 @@ export default {
   async mounted() {
     try {
       /*  let url = "http://localhost:7000/Admin"; */
-      let url = "/api/user/Admin";
-      const response = await fetch(url, {
+
+      const response = await fetch("/api/user/", {
         credentials: "include",
         headers: {
           "Content-type": "application/json",

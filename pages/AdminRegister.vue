@@ -19,7 +19,7 @@
               <div class="">
                 <label class="block text-sm text-gray-200" for="username">Username</label>
                 <input
-                  class="w-full px-5 py-1 dark:text-gray-300 text-gray-200 rounded"
+                  class="w-full px-5 py-1 text-black rounded"
                   id="username"
                   name="username"
                   v-model="name"
@@ -32,7 +32,7 @@
               <div class="">
                 <label class="block text-sm text-gray-200" for="email">Email</label>
                 <input
-                  class="w-full px-5 py-1 text-gray-200 dark:text-gray-300 bg-gray-200 rounded"
+                  class="w-full px-5 py-1 text-black bg-gray-200 rounded"
                   id="email"
                   name="email"
                   type="email"
@@ -45,11 +45,11 @@
               <div class="mt-2">
                 <label class="block text-sm text-gray-200" for="password">Password</label>
                 <input
-                  class="w-full px-5 py-1 text-gray-200 dark:text-gray-300 bg-gray-200 rounded"
+                  class="w-full px-5 py-1 text-black bg-gray-200 rounded"
                   id="password"
                   name="password"
                   v-model="password"
-                  type="text"
+                  type="password"
                   required=""
                   placeholder="*******"
                   aria-label="password"
@@ -146,8 +146,8 @@ export default {
   async mounted() {
     try {
       /* let url = "http://localhost:7000/Admin"; */
-      let url = "/api/user/Admin";
-      const response = await fetch(url, {
+
+      const response = await fetch("/api/user/", {
         credentials: "include",
         headers: {
           "Content-type": "application/json",
