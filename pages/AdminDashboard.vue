@@ -388,19 +388,19 @@
                 type="button"
                 class="appearance-none py-4 dark:text-white text-gray-700 border-b border-blue-dark mr-6"
               >
-                ksh. 6000
+                ....
               </button>
               <button
                 type="button"
                 class="appearance-none py-4 dark:text-white text-gray-700 border-b border-transparent hover:border-grey-dark mr-6"
               >
-                $ 6000
+                ....
               </button>
               <button
                 type="button"
                 class="appearance-none py-4 dark:text-white text-gray-700 border-b border-transparent hover:border-grey-dark"
               >
-                Ksh 5000
+                ....
               </button>
             </div>
           </div>
@@ -410,31 +410,8 @@
             <div class="dark:text-white text-gray-700 mb-2">
               <span class="text-5xl dark:text-white text-gray-700">Users</span>
               <span
-                class="text-3xl align-top dark:text-white text-gray-700 bg-indigo-700 rounded-full p-1"
-                >50</span
-              >
-            </div>
-          </div>
-          <div class="flex-shrink w-32 inline-block relative">
-            <select
-              class="block appearance-none w-full dark:text-white text-gray-700 bg-slate-300 dark:bg-slate-800 border border-grey-light px-4 py-2 pr-8 rounded"
-            >
-              <option class="dark:text-white text-gray-700">Ksh</option>
-              <option class="dark:text-white text-gray-700">$</option>
-              <option class="dark:text-white text-gray-700">N</option>
-            </select>
-            <div
-              class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey"
-            >
-              <svg
-                class="fill-current h-4 w-4"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-                />
-              </svg>
+                class="text-3xl align-top dark:text-white text-gray-700 rounded-full p-1"
+              ></span>
             </div>
           </div>
         </div>
@@ -450,7 +427,7 @@
               <div
                 class="text-sm uppercase text-grey tracking-wide dark:text-white text-gray-700"
               >
-                Transaction
+                All User
               </div>
             </div>
           </div>
@@ -459,13 +436,13 @@
               <div class="dark:text-white text-gray-700 mb-2">
                 <span class="text-5xl dark:text-white text-gray-700">You</span>
                 <span class="text-xl align-top text-white rounded-full bg-blue-600 p-1"
-                  >74</span
+                  >-</span
                 >
               </div>
               <div
                 class="text-sm uppercase text-grey tracking-wide dark:text-white text-gray-700"
               >
-                Track
+                ...
               </div>
             </div>
           </div>
@@ -474,7 +451,7 @@
               <div class="text-whiteer mb-2">
                 <span class="text-5xl dark:text-white text-gray-700">Track</span>
                 <span class="text-xl align-top text-white rounded-full bg-blue-600 p-1"
-                  >74</span
+                  >-</span
                 >
               </div>
               <div
@@ -494,54 +471,33 @@
             <div class="border-b">
               <div class="flex justify-between px-6 -mb-px flex-row">
                 <h3 class="dark:text-white text-gray-700 py-4 font-normal text-lg">
-                  Transaction
+                  All Users
                 </h3>
-                <button
-                  type="button"
-                  class="appearance-none py-4 border-b border-blue-dark mr-3 dark:text-white text-gray-700"
-                >
-                  CODE
-                </button>
-                <button
-                  type="button"
-                  class="appearance-none py-4 dark:text-white text-gray-700 border-b border-transparent hover:border-grey-dark"
-                >
-                  Amount
-                </button>
               </div>
             </div>
             <div
               class="flex-grow flex px-6 py-6 dark:text-white text-gray-700 items-center border-b -mx-4"
+              v-for="user in users[0]"
+              :key="user._id"
             >
               <div class="w-2/5 xl:w-1/4 px-4 flex items-center">
-                <div class="rounded-full bg-orange inline-flex mr-3">
-                  <svg
-                    class="fill-current dark:text-white text-gray-700 h-8 w-8 block"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 32 32"
-                  >
-                    <g fill-rule="evenodd">
-                      <path
-                        d="M21.78 15.37c.51-.61.83-1.4.83-2.26 0-2.74-1.6-4.38-4.24-4.38V5.45c0-.12-.1-.22-.22-.22h-1.27c-.11 0-.2.1-.2.21v3.3h-1.7V5.44c0-.12-.1-.22-.22-.22H13.5c-.12 0-.2.1-.21.21v3.3H9.67c-.12 0-.21.09-.21.21v1.31c0 .12.1.22.21.22h.21c.94 0 1.7.79 1.7 1.75v7c0 .92-.68 1.67-1.55 1.75a.21.21 0 0 0-.18.16l-.33 1.32c-.01.06 0 .13.04.19.04.05.1.08.17.08h3.55v3.3c0 .1.1.2.2.2h1.28c.12 0 .21-.1.21-.22v-3.28h1.7v3.3c0 .1.1.2.21.2h1.27c.12 0 .22-.1.22-.22v-3.28h.85c2.65 0 4.24-1.64 4.24-4.37 0-1.28-.68-2.39-1.68-3zm-6.8-4.01h2.54c.94 0 1.7.78 1.7 1.75 0 .96-.76 1.75-1.7 1.75h-2.55v-3.5zm3.39 8.75h-3.4v-3.5h3.4c.93 0 1.7.78 1.7 1.75 0 .96-.77 1.75-1.7 1.75z"
-                      ></path>
-                    </g>
-                  </svg>
+                <div class="bg-orange inline-flex mr-3">
+                  {{ user.email }}
                 </div>
-                <span class="text-lg dark:text-white text-gray-700">Ksh</span>
+                <span class="text-lg dark:text-white text-gray-700"></span>
               </div>
               <div class="hidden md:flex lg:hidden xl:flex w-1/4 px-4 items-center">
                 <div
                   class="bg-orange h-2 rounded-full flex-grow mr-2 dark:text-white text-gray-700"
                 ></div>
-                100%
               </div>
               <div class="flex w-3/5 md:w/12">
                 <div class="w-1/2 px-4">
-                  <div class="text-right dark:text-white text-gray-700">50%</div>
+                  <div class="text-right dark:text-white text-gray-700"></div>
                 </div>
                 <div class="w-1/2 px-4">
                   <div class="text-right text-grey dark:text-white text-gray-700">
-                    ksh 21.28
+                    ....
                   </div>
                 </div>
               </div>
@@ -549,7 +505,7 @@
 
             <div class="px-6 py-4">
               <div class="text-center text-grey dark:text-white text-gray-700">
-                Total Balance &asymp; Ksh21.28
+                Users emails
               </div>
             </div>
           </div>
@@ -580,21 +536,14 @@
                     </svg>
                   </div>
                   <p class="text-2xl font-medium mb-4 dark:text-white text-gray-700">
-                    No Transaction yet
+                    ALL songs you've added
                   </p>
-                  <p
-                    class="text-grey max-w-xs mx-auto mb-6 dark:text-white text-gray-700"
-                  >
-                    You've successfully linked a payment method and can start buying
-                    digital currency.
-                  </p>
-                  <div>
-                    <button
-                      type="button"
-                      class="bg-blue dark:text-white text-gray-700 hover:bg-blue-dark border border-blue-dark rounded px-6 py-4"
+                  <div class="" v-for="song in songs[0]" :key="song._id">
+                    <p
+                      class="text-grey max-w-xs mx-auto lowercase font-mono dark:text-white text-gray-700"
                     >
-                      Buy now
-                    </button>
+                      {{ song.title }}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -619,7 +568,9 @@ export default {
     let msg = ref("");
     let closeAccount = ref(false);
     let id = ref("");
-    return { auth, msg, id, closeAccount, mode };
+    let users = ref([]);
+    let songs = ref([]);
+    return { auth, msg, id, closeAccount, mode, users, songs };
   },
   async mounted() {
     try {
@@ -646,6 +597,8 @@ export default {
     } catch (error) {
       console.log(error);
     }
+    this.getAllUsers();
+    this.getAllSongs();
   },
   methods: {
     async logout() {
@@ -672,10 +625,39 @@ export default {
         location.reload();
       }
     },
+    async getAllSongs() {
+      let songUrl = "/api/s1/Songs";
+      const res = await fetch(songUrl, {
+        method: "GET",
+        headers: { "Content-type": "application/json" },
+      });
+      if (res.ok) {
+        const resp = await res.json();
+        this.songs = [...this.songs, resp];
+      } else {
+        const resp = await res.json();
+        console.log(resp);
+      }
+    },
+    async getAllUsers() {
+      let url = "/api/v1/getUsers";
+      const res = await fetch(url, {
+        method: "GET",
+        headers: { "Content-type": "application/json" },
+      });
+      if (res.ok) {
+        const resp = await res.json();
+        this.users = [...this.users, resp];
+      } else {
+        const resp = await res.json();
+        console.log(resp);
+      }
+    },
     toggleMode() {
       this.mode = !this.mode;
     },
   },
   components: { Terms, ToggleMode },
+  computed: {},
 };
 </script>

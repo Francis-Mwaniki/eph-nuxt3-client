@@ -181,9 +181,7 @@ export default {
     },
   },
   sortTime() {
-    return this.data.forEach((tm) => {
-      tm.createdAt.to;
-    });
+    return this.data.forEach((tm) => {});
   },
   computed: {},
 

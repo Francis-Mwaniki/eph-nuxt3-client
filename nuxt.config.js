@@ -50,6 +50,10 @@ export default defineNuxtConfig({
           target: "http://localhost:7000/",
           ws: true,
         },
+        "/api/v1/getUsers": {
+          target: "http://localhost:7000/",
+          ws: true,
+        },
         "/api/s1/Songs": {
           target: "http://localhost:7000/",
           ws: true,
