@@ -165,7 +165,7 @@ export default {
       } else {
         const content = await response.json();
         this.msg = content.message;
-        this.auth = false;
+        this.auth = true;
         console.log(content);
       }
     } catch (error) {

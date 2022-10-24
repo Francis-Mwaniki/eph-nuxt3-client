@@ -11,29 +11,29 @@
             >
               <p class="text-gray-200 text-center text-lg font-bold">Login As Admin</p>
               <div class="">
-                <label class="block text-sm text-gray-200" for="username">Email</label>
+                <label class="block text-sm text-gray-200" for="email">Email</label>
                 <input
                   class="w-full px-5 py-1 text-gray-800 dark:text-gray-800 bg-gray-200 rounded"
-                  id="username"
-                  name="username"
-                  type="text"
+                  id="email"
+                  name="email"
+                  type="email"
                   v-model="email"
                   required=""
-                  placeholder="User Name"
-                  aria-label="username"
+                  placeholder="email"
+                  autocomplete="true"
+                  aria-label="email"
                 />
               </div>
               <div class="mt-2">
-                <label class="block text-sm text-gray-200" for="password">Password</label>
+                <label class="block text-sm text-gray-200">Password</label>
                 <input
                   class="w-full px-5 py-1 text-gray-800 dark:text-gray-800 bg-gray-200 rounded"
-                  id="password"
                   name="password"
                   v-model="password"
                   type="password"
-                  required=""
+                  required
                   placeholder="*******"
-                  aria-label="password"
+                  autocomplete="true"
                 />
               </div>
               <div class="mt-4 items-center justify-between">
@@ -50,12 +50,12 @@
                   Forgot Password?
                 </a>
               </div>
-              <!--  <nuxt-link
-              to="/AdminRegister"
-              class="inline-block right-0 align-baseline font-bold text-sm text-500 text-gray-200"
-            >
-              Not registered ?
-            </nuxt-link> -->
+              <nuxt-link
+                to="/AdminRegister"
+                class="inline-block right-0 align-baseline font-bold text-sm text-500 text-gray-200"
+              >
+                Not registered ?
+              </nuxt-link>
             </form>
           </div>
         </div>

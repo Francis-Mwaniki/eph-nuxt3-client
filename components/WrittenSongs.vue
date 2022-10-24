@@ -113,7 +113,7 @@
                   <a
                     class="hover:text-indigo-50 no-underline rounded-md bg-slate-400 absolute bottom-5 text-sm text-indigo-700 dark:text-indigo-200 font-bold cursor-pointer flex items-center"
                   >
-                    <p class="text-blue-700 font-light p-1">
+                    <p class="text-blue-700 font-light p-1 mt-3 sm:mt-1">
                       created @ {{ song.createdAt }} by Admin
                     </p>
 
