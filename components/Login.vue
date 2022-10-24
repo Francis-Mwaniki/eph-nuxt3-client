@@ -101,7 +101,7 @@
                 />
               </svg>
             </span>
-            login
+            {{ loading ? "processing.." : "login" }}
           </button>
         </div>
         <div>

@@ -4,6 +4,7 @@ import useToast from "./useToast";
 export const useLoginStore = defineStore("login-store", {
   state: () => ({
     users: [] as IexistingUser[],
+    loading: false,
   }),
   actions: {
     //create a new book
