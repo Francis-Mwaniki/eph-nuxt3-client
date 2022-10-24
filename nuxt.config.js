@@ -33,6 +33,10 @@ export default defineNuxtConfig({
           target: "http://localhost:7000/",
           ws: true,
         },
+        "/api/user/AdminLogin": {
+          target: "http://localhost:7000/",
+          ws: true,
+        },
         "/api/user/": {
           target: "http://localhost:7000/",
           ws: true,
@@ -41,11 +45,12 @@ export default defineNuxtConfig({
           target: "http://localhost:7000/",
           ws: true,
         },
-        "/api/user/AdminLogin": {
+
+        "/api/s1/addSongs": {
           target: "http://localhost:7000/",
           ws: true,
         },
-        "/api/user/AdminLogout": {
+        "/api/s1/Songs": {
           target: "http://localhost:7000/",
           ws: true,
         },

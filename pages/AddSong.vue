@@ -20,7 +20,7 @@
             Add Song
           </h1>
         </div>
-        <form class="flex flex-col justify-center">
+        <form class="flex flex-col justify-center" @submit.prevent="submit">
           <div class="flex justify-between items-center mb-3">
             <div class="inline-flex items-center self-start">
               <svg
@@ -45,8 +45,9 @@
           <input
             class="mb-3 px-2 py-1.5 mb-3 mt-1 block w-full px-2 py-1.5 border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 focus:invalid:border-red-500 focus:invalid:ring-red-500"
             type="text"
-            name="username"
+            name="title"
             placeholder="title..."
+            v-model="title"
           />
           <label class="text-sm font-medium dark:text-white text-gray-600"
             >Song Content</label
@@ -57,6 +58,7 @@
             class="mb-3 mt-1 block w-full px-2 py-1.5 border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 focus:invalid:border-red-500 focus:invalid:ring-red-500"
             name="messages"
             placeholder="content..."
+            v-model="description"
           ></textarea>
           <button
             class="px-4 py-1.5 rounded-md shadow-lg bg-indigo-600 font-medium text-gray-100 block transition duration-300"
@@ -73,7 +75,24 @@
 </template>
 
 <script>
+import { useStore } from "../composables/songStore";
+import { ref } from "vue";
 export default {
   components: {},
+  setup() {
+    const store = useStore();
+    let title = ref("");
+    let description = ref("");
+    async function submit() {
+      let results = JSON.stringify({
+        title: title.value,
+        description: description.value,
+      });
+      console.log(results);
+      await store.create(results);
+    }
+
+    return { submit, store, description, title };
+  },
 };
 </script>
