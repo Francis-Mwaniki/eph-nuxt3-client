@@ -41,10 +41,7 @@
           <!-- Modal body -->
           <div class="p-6 space-y-6 flex justify-center items-center flex-col mx-auto">
             <div class="text-base leading-relaxed dark:text-gray-400 text-gray-400">
-              <span
-                >👉 John 3:16 for Elohim so loved the world that He gave His only son that
-                whosoever believes in Him will not perish but have Eternal life
-              </span>
+              <span>👉 John 3:16 </span>
               <span
                 >👉 See more verses here Rev 3:1,1:3,1 John 5:3 and Ecc 12:12-13.
               </span>
