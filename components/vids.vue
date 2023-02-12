@@ -1,7 +1,7 @@
 <template>
   <main class="bg-slate-800">
     <main
-      class="flex justify-center items-center mx-auto flex-wrap gap-2 bg-gray-100 dark:bg-slate-900 text-slate-900"
+      class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid-flow-row gap-2 bg-gray-100 dark:bg-slate-900 text-slate-900"
     >
       <div class="" v-for="vid in videos">
         <iframe
@@ -28,6 +28,7 @@ export default {
         { videoId: "J05X_RK_D6g" },
         { videoId: "oE-iMg1SpPI" },
         { videoId: "lfGOgUWzQ5U" },
+        { videoId: "x-_Afk62SoE" },
       ],
     };
   },
