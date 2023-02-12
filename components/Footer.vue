@@ -137,11 +137,11 @@
       </div>
 
       <div>
-        <form action="">
+        <form action="https://formspree.io/f/xrgvpynr" method="POST">
           <div
-            class="grid md:grid-cols-3 gird-cols-1 gap-4 justify-center items-center relative z-20"
+            class="grid md:grid-cols-2 gird-cols-1 gap-4 justify-center items-center relative z-20"
           >
-            <div class="md:ml-auto md:mb-6">
+            <div class="md:ml-auto md:mb-6 md:hidden">
               <p class="">
                 <strong>Send Us An Email</strong>
               </p>
@@ -150,12 +150,21 @@
             <div class="md:mb-6">
               <input
                 type="text"
+                name="name"
+                class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                id="exampleFormControlInput1"
+                placeholder="Your name"
+              />
+            </div>
+            <div class="md:mb-6">
+              <input
+                type="email"
+                name="email"
                 class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                 id="exampleFormControlInput1"
                 placeholder="Email address"
               />
             </div>
-
             <div class="md:mr-auto mb-6">
               <button
                 type="submit"

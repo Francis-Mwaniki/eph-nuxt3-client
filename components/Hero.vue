@@ -240,7 +240,7 @@
                 >
               </h1>
               <p
-                class="mt-3 text-base text-gray-500 sm:mx-auto font-mono sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0"
+                class="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0"
               >
                 Messianic Artists Is an inspiring movement of musician to spread the
                 gospel world.The third angel Message Rev (14:6-7)
